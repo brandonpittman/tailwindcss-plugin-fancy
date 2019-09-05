@@ -12,7 +12,7 @@
     "postcss": "^7.0.17",
     "tailwindcss-plugin-aspect": "latest",
     "tailwindcss-plugin-content": "latest",
-    "tailwindcss-plugin-current-color": "latest",
+    "tailwindcss-plugin-decoration": "latest",
     "tailwindcss-plugin-prefers-color-scheme": "latest",
     "tailwindcss-plugin-transitions": "latest"
   },
