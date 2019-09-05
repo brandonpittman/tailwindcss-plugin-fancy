@@ -8,6 +8,8 @@
     "url": "git+https://github.com/brandonpittman/tailwindcss-plugin-fancy.git"
   },
   "dependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "postcss": "^7.0.17",
     "tailwindcss-plugin-aspect": "0.0.1",
     "tailwindcss-plugin-content": "0.0.1",
     "tailwindcss-plugin-current-color": "0.0.1",
