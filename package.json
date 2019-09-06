@@ -10,8 +10,8 @@
   "dependencies": {
     "@tailwindcss/custom-forms": "latest",
     "postcss": "^7.0.17",
-    "tailwindcss": "^1.1.2",
-    "tailwindcss-plugin-animated": "0.0.5",
+    "tailwindcss": "latest",
+    "tailwindcss-plugin-animated": "latest",
     "tailwindcss-plugin-aspect": "latest",
     "tailwindcss-plugin-content": "latest",
     "tailwindcss-plugin-decoration": "latest",
