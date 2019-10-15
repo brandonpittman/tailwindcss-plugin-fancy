@@ -1,6 +1,4 @@
-const postcss = require('postcss')
-
-module.exports = function ({addComponents, addUtilities, addVariant, theme, variants, e}) {
+module.exports = function ({addComponents, addUtilities, addVariant, theme, variants, e, postcss}) {
   require("tailwindcss-plugin-animated")({addUtilities, addComponents, e, theme, variants});
   require("tailwindcss-plugin-transitions")({addUtilities, variants});
   require("tailwindcss-plugin-content")({addComponents, addUtilities, addVariant, e});
