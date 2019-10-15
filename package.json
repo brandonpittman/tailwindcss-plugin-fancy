@@ -8,14 +8,14 @@
     "url": "git+https://github.com/brandonpittman/tailwindcss-plugin-fancy.git"
   },
   "dependencies": {
-    "@tailwindcss/custom-forms": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest",
-    "tailwindcss-plugin-animated": "latest",
-    "tailwindcss-plugin-aspect": "latest",
-    "tailwindcss-plugin-content": "latest",
-    "tailwindcss-plugin-decoration": "latest",
-    "tailwindcss-plugin-transitions": "latest"
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "tailwindcss": "^1.2.0-canary.0",
+    "tailwindcss-plugin-animated": "^0.1.0",
+    "tailwindcss-plugin-aspect": "0.0.1",
+    "tailwindcss-plugin-content": "0.0.3",
+    "tailwindcss-plugin-decoration": "0.0.2",
+    "tailwindcss-plugin-prefers-color-scheme": "^0.1.0",
+    "tailwindcss-plugin-transitions": "^1.0.6"
   },
   "keywords": [
     "tailwindcss"
