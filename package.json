@@ -9,12 +9,12 @@
   },
   "dependencies": {
     "@tailwindcss/custom-forms": "^0.2.1",
-    "tailwindcss": "^1.2.0-canary.0",
+    "tailwindcss": "^1.2.0-canary.1",
     "tailwindcss-plugin-animated": "^0.1.0",
     "tailwindcss-plugin-aspect": "0.0.1",
     "tailwindcss-plugin-content": "0.0.3",
-    "tailwindcss-plugin-decoration": "0.0.2",
-    "tailwindcss-plugin-prefers-color-scheme": "^0.1.0",
+    "tailwindcss-plugin-decoration": "0.0.4",
+    "tailwindcss-plugin-prefers-color-scheme": "^0.1.1",
     "tailwindcss-plugin-transitions": "^1.0.6"
   },
   "keywords": [
