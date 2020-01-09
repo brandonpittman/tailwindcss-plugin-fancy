@@ -17,8 +17,7 @@
     "tailwindcss-plugin-aspect": "1.0.0",
     "tailwindcss-plugin-content": "1.0.1",
     "tailwindcss-plugin-decoration": "1.0.1",
-    "tailwindcss-plugin-prefers-color-scheme": "^0.1.1",
-    "tailwindcss-plugin-transitions": "^1.0.6"
+    "tailwindcss-plugin-prefers-color-scheme": "^0.1.1"
   },
   "keywords": [
     "tailwindcss"
