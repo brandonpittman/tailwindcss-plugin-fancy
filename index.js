@@ -8,6 +8,7 @@ module.exports = plugin(function (bagOfCrap) {
   require('tailwindcss-plugin-aspect').handler(bagOfCrap);
   require('tailwindcss-plugin-decoration').handler(bagOfCrap);
   require('@tailwindcss/custom-forms')(bagOfCrap);
+  require('./lib/future') // stuff like space-{x,y}-$spacing
 }, {
   ...content.config,
   ...design.config
