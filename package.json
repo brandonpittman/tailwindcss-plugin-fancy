@@ -13,12 +13,12 @@
   ],
   "dependencies": {
     "@tailwindcss/custom-forms": "^0.2.1",
-    "tailwindcss": "^1.2.0-canary.5",
     "tailwindcss-plugin-animated": "^1.0.0",
     "tailwindcss-plugin-aspect": "1.0.0",
     "tailwindcss-plugin-content": "1.0.1",
     "tailwindcss-plugin-decoration": "1.0.1",
-    "tailwindcss-plugin-design": "0.0.2"
+    "tailwindcss-plugin-design": "0.0.2",
+    "tailwindcss": "^1.2.0-canary.7"
   },
   "keywords": [
     "tailwindcss"
@@ -28,5 +28,6 @@
   "bugs": {
     "url": "https://github.com/brandonpittman/tailwindcss-plugin-fancy/issues"
   },
-  "homepage": "https://github.com/brandonpittman/tailwindcss-plugin-fancy#readme"
+  "homepage": "https://github.com/brandonpittman/tailwindcss-plugin-fancy#readme",
+  "devDependencies": {}
 }
