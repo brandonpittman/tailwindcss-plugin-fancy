@@ -18,7 +18,7 @@
     "tailwindcss-plugin-content": "latest",
     "tailwindcss-plugin-decoration": "latest",
     "tailwindcss-plugin-design": "latest",
-    "tailwindcss": "^1.2.0-canary.7"
+    "tailwindcss": "^1.2.0"
   },
   "keywords": [
     "tailwindcss"
