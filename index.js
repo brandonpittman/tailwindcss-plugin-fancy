@@ -6,6 +6,7 @@ const inset = require('./lib/inset')
 
 module.exports = plugin(function (bagOfCrap) {
   content.handler(bagOfCrap)
+  design.handler(bagOfCrap)
   require('tailwindcss-plugin-animated').handler(bagOfCrap);
   require('tailwindcss-plugin-aspect').handler(bagOfCrap);
   require('tailwindcss-plugin-decoration').handler(bagOfCrap);
