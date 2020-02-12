@@ -1,6 +1,8 @@
 const plugin = require('tailwindcss/plugin')
 const content = require('tailwindcss-plugin-content')
 const design = require('tailwindcss-plugin-design')
+const skew = require('./lib/skew')
+const inset = require('./lib/inset')
 
 module.exports = plugin(function (bagOfCrap) {
   content.handler(bagOfCrap)
@@ -10,6 +12,8 @@ module.exports = plugin(function (bagOfCrap) {
   require('@tailwindcss/custom-forms')(bagOfCrap);
   require('./lib/future.js')(bagOfCrap) // stuff like space-{x,y}-$spacing
 }, {
+  ...skew,
+  ...inset,
   ...content.config,
   ...design.config
 })
