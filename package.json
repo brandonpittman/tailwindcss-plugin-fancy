@@ -7,18 +7,8 @@
     "type": "git",
     "url": "git+https://github.com/brandonpittman/tailwindcss-plugin-fancy.git"
   },
-  "files": [
-    "index.js",
-    "lib"
-  ],
   "dependencies": {
-    "@tailwindcss/custom-forms": "latest",
-    "tailwindcss-plugin-animated": "latest",
-    "tailwindcss-plugin-aspect": "latest",
-    "tailwindcss-plugin-content": "latest",
-    "tailwindcss-plugin-decoration": "latest",
-    "tailwindcss-plugin-design": "latest",
-    "tailwindcss": "^1.2.0"
+    "@tailwindcss/custom-forms": "latest"
   },
   "keywords": [
     "tailwindcss"
@@ -29,5 +19,7 @@
     "url": "https://github.com/brandonpittman/tailwindcss-plugin-fancy/issues"
   },
   "homepage": "https://github.com/brandonpittman/tailwindcss-plugin-fancy#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "tailwindcss": "^1.2.0"
+  }
 }

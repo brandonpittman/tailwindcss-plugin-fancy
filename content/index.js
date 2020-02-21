@@ -1,57 +1,43 @@
 const plugin = require('tailwindcss/plugin')
-const content = require('./content')
-const design = require('./design')
-const future = require('./future')
-const animation = require('./animation')
-const aspect = require('./aspect')
-const decoration = require('./decoration')
 
-module.exports = plugin(function (bagOfCrap) {
-  content.handler(bagOfCrap)
-  design.handler(bagOfCrap)
-  future.handler(bagOfCrap)
-  animation.handler(bagOfCrap);
-  aspect.handler(bagOfCrap);
-  decoration.handler(bagOfCrap);
-  require('@tailwindcss/custom-forms')(bagOfCrap);
+module.exports = plugin(function ({addComponents, addUtilities, addVariant, e}) {
+  const content = {
+    '.content-none': {content: '\'\''},
+    '.content-data-src': {content: 'attr(src)'},
+    '.content-data-href': {content: 'attr(href)'},
+    '.content-data-title': {content: 'attr(title)'},
+    '.content-data-lang': {content: 'attr(lang)'},
+    '.content-data-before': {content: 'attr(data-before)'},
+    '.content-data-after': {content: 'attr(data-after)'},
+    '.content-var-before': {content: 'var(--before)'},
+    '.content-var-after': {content: 'var(--after)'},
+    '.content-open-quote': {content: 'open-quote'},
+    '.content-close-quote': {content: 'close-quote'},
+  };
+
+  const utilities = {
+    '.visuallyhidden': {position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', opacity: '0', overflow: 'hidden', textIndent: '-9999px', zIndex: '0'},
+    '.-z-10': {zIndex: '-10'},
+    '.-z-20': {zIndex: '-20'},
+    '.-z-30': {zIndex: '-30'},
+    '.-z-40': {zIndex: '-40'},
+    '.-z-50': {zIndex: '-50'},
+  }
+
+  addUtilities(utilities, ['responsive'])
+
+  addUtilities(content, {variants: ['before', 'after']});
+
+  const variants = ['before', 'after']
+
+  variants.forEach(variant => {
+    addVariant(variant, ({modifySelectors, separator}) => {
+      modifySelectors(({className}) => {
+        return `.${e(`${variant}${separator}${className}`)}:${variant}`;
+      });
+    })
+  })
 }, {
-  theme: {
-    extend: {
-      inset: {
-        "1/4": "25%",
-        "1/3": "33.333333%",
-        "2/3": "66.666666%",
-        "1/2": "50%",
-        "3/4": "75%",
-        "full": "100%",
-      },
-      skew: {
-        '0': '0deg',
-        '1': '1deg',
-        '2': '2deg',
-        '3': '3deg',
-        '4': '4deg',
-        '5': '5deg',
-        '10': '10deg',
-        '15': '15deg',
-        '20': '20deg',
-        '90': '90deg',
-        '-1': '-1deg',
-        '-2': '-2deg',
-        '-3': '-3deg',
-        '-4': '-4deg',
-        '-5': '-5deg',
-        '-10': '-10deg',
-        '-15': '-15deg',
-        '-20': '-20deg',
-        '-90': '-90deg',
-      },
-      screens: {
-        dark: {raw: '(prefers-color-scheme: dark)'},
-        light: {raw: '(prefers-color-scheme: light)'},
-      }
-    },
-  },
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus', 'after', 'before', 'group-hover'],
     backgroundImage: ['responsive', 'hover', 'focus', 'after', 'before', 'group-hover'],

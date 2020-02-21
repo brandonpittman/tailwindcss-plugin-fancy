@@ -1,4 +1,6 @@
-module.exports = function ({addUtilities, theme}) {
+const plugin = require('tailwindcss/plugin')
+
+module.exports = plugin(function ({addUtilities, theme}) {
   let spacing = Object.entries(theme('spacing'))
 
   for (let [prop, value] of spacing) {
@@ -14,4 +16,5 @@ module.exports = function ({addUtilities, theme}) {
       }
     }, ['responsive'])
   }
-}
+}, {
+})
