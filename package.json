@@ -2,11 +2,14 @@
   "name": "tailwindcss-plugin-fancy",
   "version": "1.0.13",
   "description": "A collection of other Tailwind CSS plugins all rolled up for your convenience.",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brandonpittman/tailwindcss-plugin-fancy.git"
   },
+  "files": [
+    "/src"
+  ],
   "dependencies": {
     "@tailwindcss/custom-forms": "latest"
   },
