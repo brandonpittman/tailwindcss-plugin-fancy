@@ -61,4 +61,14 @@ module.exports = plugin(function ({addComponents, addUtilities, addVariant, them
       addNewComponent(addComponents, key, value)
     }
   }
+}, {
+  theme: {
+    extend: {
+      screens: {
+
+        dark: {raw: '(prefers-color-scheme: dark)'},
+        light: {raw: '(prefers-color-scheme: light)'},
+      }
+    }
+  }
 })
