@@ -1,10 +1,10 @@
 const plugin = require('tailwindcss/plugin')
-const content = require('./content')
-const design = require('./design')
-const future = require('./future')
-const animation = require('./animation')
-const aspect = require('./aspect')
-const decoration = require('./decoration')
+const content = require('./packages/content')
+const design = require('./packages/design')
+const future = require('./packages/future')
+const animation = require('./packages/animated')
+const aspect = require('./packages/aspect')
+const decoration = require('./packages/decoration')
 
 module.exports = plugin(function (bagOfCrap) {
   content.handler(bagOfCrap)
