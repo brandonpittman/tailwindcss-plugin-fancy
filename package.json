@@ -13,8 +13,8 @@
   "scripts": {
     "prepublish": "npm run build",
     "clean": "del dist",
-    "build": "npm run clean && npm run test && ncc build index.js -o dist -m",
-    "test": "xo --fix"
+    "build": "npm run clean && ncc build index.js -o dist -m",
+    "lint": "xo"
   },
   "dependencies": {},
   "keywords": [

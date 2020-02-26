@@ -1,26 +1,25 @@
-const plugin = require('tailwindcss/plugin')
-const parser = require('./parser')
-const fs = require('fs')
-const path = require('path')
-const paths = require('./paths')
+const plugin = require('tailwindcss/plugin');
+const parser = require('./parser');
+const fs = require('fs');
+const path = require('path');
 
 function reducer(acc, p) {
-  let name = path.basename(p, '.svg')
-  let content = fs.readFileSync(p).toString()
+	const name = path.basename(p, '.svg');
+	const content = fs.readFileSync(p).toString();
 
-  acc[`.${name}`] = {
-    backgroundImage: parser(content)
-  }
+	acc[`.${name}`] = {
+		backgroundImage: parser(content)
+	};
 
-  return acc
+	return acc;
 }
 
-module.exports = plugin.withOptions(function (options = {
-  variants: []
-}) {
-  return function ({addUtilities}) {
-    let result = require('./paths')()
-    utilities = result.reduce(reducer, {})
-    addUtilities(utilities, options.variants)
-  }
-})
+module.exports = plugin.withOptions((options = {
+	variants: []
+}) => {
+	return function ({addUtilities}) {
+		const result = require('./paths')();
+		const utilities = result.reduce(reducer, {});
+		addUtilities(utilities, options.variants);
+	};
+});
