@@ -1,4 +1,4 @@
 node_modules
-*.css
 tags
 tailwind.config.js
+style.css
