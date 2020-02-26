@@ -3,13 +3,14 @@
 This plugin merely wraps up a collection of other plugins I've written for
 Tailwind that makes my life/job easier. Plugins include:
 
-- [tailwindcss-plugin-content](https://github.com/brandonpittman/tailwindcss-plugin-fancy/content)
-- [tailwindcss-plugin-animated](https://github.com/brandonpittman/tailwindcss-plugin-fancy/animated)
-- [tailwindcss-plugin-design](https://github.com/brandonpittman/tailwindcss-plugin-fancy/design)
-- [tailwindcss-plugin-aspect](https://github.com/brandonpittman/tailwindcss-plugin-fancy/aspect)
-- [tailwindcss-plugin-decoration](https://github.com/brandonpittman/tailwindcss-plugin-fancy/decoration)
-- [tailwindcss-plugin-future](https://github.com/brandonpittman/tailwindcss-plugin-fancy/future)
-- [@tailwindcss/custom-forms](https://github.com/tailwindcss/custom-forms)
+- tailwindcss-plugin-content
+- tailwindcss-plugin-animated
+- tailwindcss-plugin-design
+- tailwindcss-plugin-aspect
+- tailwindcss-plugin-decoration
+- tailwindcss-plugin-future
+- tailwindcss-plugin-heroicons
+- @tailwindcss/custom-forms
 
 ## Usage
 
@@ -17,8 +18,8 @@ Tailwind that makes my life/job easier. Plugins include:
 // import everything
 require('tailwindcss-plugin-fancy')
 
-// import just the future plugin
-require('tailwindcss-plugin-fancy/future')
+// selectively import packages
+const { future, aspect } = require('tailwindcss-plugin-fancy')
 ```
 
-**Please refer to each individual plugin's documentation for instructions.**
+**Please refer to each individual plugin's documentation for instructions. See `/packages` for more.**
