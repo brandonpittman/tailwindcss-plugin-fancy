@@ -24,5 +24,7 @@
     "url": "https://github.com/brandonpittman/tailwindcss-plugin-design/issues"
   },
   "homepage": "https://github.com/brandonpittman/tailwindcss-plugin-design#readme",
-  "dependencies": {}
+  "dependencies": {
+    "tailwindcss": "^1.2.0"
+  }
 }

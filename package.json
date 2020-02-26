@@ -11,9 +11,13 @@
     "dist"
   ],
   "scripts": {
-    "build": "ncc build index.js -o dist -m"
+    "prepublish": "npm run build",
+    "clean": "del dist",
+    "build": "npm run clean && npm run test && ncc build index.js -o dist -m",
+    "test": "xo --fix"
   },
   "dependencies": {
+    "tailwindcss": "^1.2.0",
     "@tailwindcss/custom-forms": "latest"
   },
   "keywords": [
@@ -27,6 +31,7 @@
   "homepage": "https://github.com/brandonpittman/tailwindcss-plugin-fancy#readme",
   "devDependencies": {
     "@zeit/ncc": "^0.21.1",
-    "tailwindcss": "^1.2.0"
+    "del-cli": "^3.0.0",
+    "xo": "^0.27.1"
   }
 }
