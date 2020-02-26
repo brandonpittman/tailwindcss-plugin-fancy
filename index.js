@@ -5,6 +5,7 @@ const future = require('./packages/future')
 const animation = require('./packages/animated')
 const aspect = require('./packages/aspect')
 const decoration = require('./packages/decoration')
+const forms = require('@tailwindcss/custom-forms')
 
 module.exports = plugin(function (bagOfCrap) {
   content.handler(bagOfCrap)
@@ -13,7 +14,7 @@ module.exports = plugin(function (bagOfCrap) {
   animation.handler(bagOfCrap);
   aspect.handler(bagOfCrap);
   decoration.handler(bagOfCrap);
-  require('@tailwindcss/custom-forms')(bagOfCrap);
+  forms(bagOfCrap);
 }, {
   variants: {
     ...content.config.variants
