@@ -6,7 +6,6 @@ const decoration = require('./packages/decoration');
 const design = require('./packages/design');
 const future = require('./packages/future');
 const heroicons = require('./packages/heroicons');
-const ui = require('@tailwindcss/ui')();
 
 const spacing = {
   '0.5': '0.125rem',
@@ -61,14 +60,12 @@ module.exports = plugin.withOptions(function () {
     animated.handler(bagOfCrap);
     aspect.handler(bagOfCrap);
     decoration.handler(bagOfCrap);
-    ui.handler(bagOfCrap);
     heroicons({variants: ['responsive', 'hover', 'focus', 'active', 'group-hover']}).handler(bagOfCrap);
   }
 }, function (options = {}) {
   return {
     variants: {
       ...content.config.variants,
-      ...ui.config.variants
     },
     theme: {
       colors: {...ui.config.theme.colors},
