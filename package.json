@@ -2,19 +2,20 @@
   "name": "tailwindcss-plugin-fancy",
   "version": "1.0.17",
   "description": "A collection of other Tailwind CSS plugins all rolled up for your convenience.",
-  "main": "./index.js",
+  "main": "./dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brandonpittman/tailwindcss-plugin-fancy.git"
   },
   "files": [
+    "dist",
     "index.js",
     "packages"
   ],
   "scripts": {
     "prepublish": "npm run build",
     "clean": "del dist",
-    "build": "npm run clean && ncc build index.js -o dist -m",
+    "build": "npm run clean && ncc build index.js -o dist -m && cpy packages/heroicons/icons/**/*.svg dist/icons",
     "test": "xo --fix"
   },
   "dependencies": {},
@@ -28,10 +29,11 @@
   },
   "homepage": "https://github.com/brandonpittman/tailwindcss-plugin-fancy#readme",
   "devDependencies": {
-    "tailwindcss": "^1.2.0",
     "@tailwindcss/ui": "latest",
     "@zeit/ncc": "^0.21.1",
+    "cpy-cli": "^3.1.0",
     "del-cli": "^3.0.0",
+    "tailwindcss": "^1.2.0",
     "xo": "^0.27.1"
   }
 }
