@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "clean": "del dist",
-    "build": "npm run clean && npm run test && ncc build index.js -o dist -m",
+    "build": "npm run clean && ncc build index.js -o dist -m",
     "test": "xo --fix"
   },
   "dependencies": {},
