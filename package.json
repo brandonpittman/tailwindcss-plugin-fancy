@@ -13,7 +13,7 @@
     "packages"
   ],
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "clean": "del dist",
     "build": "npm run clean && ncc build index.js -o dist -m && cpy packages/heroicons/icons/**/*.svg dist/icons",
     "test": "xo --fix"
