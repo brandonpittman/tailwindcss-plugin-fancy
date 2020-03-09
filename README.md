@@ -8,7 +8,6 @@ Tailwind that makes my life/job easier. Plugins include:
 - [tailwindcss-plugin-design](https://github.com/brandonpittman/tailwindcss-plugin-fancy/tree/master/packages/design)
 - [tailwindcss-plugin-aspect](https://github.com/brandonpittman/tailwindcss-plugin-fancy/tree/master/packages/aspect)
 - [tailwindcss-plugin-decoration](https://github.com/brandonpittman/tailwindcss-plugin-fancy/tree/master/packages/decoration)
-- [tailwindcss-plugin-heroicons](https://github.com/brandonpittman/tailwindcss-plugin-fancy/tree/master/packages/heroicons)
 - [@tailwindcss/ui](https://tailwindui.com)
 
 ## Usage
@@ -17,8 +16,8 @@ Tailwind that makes my life/job easier. Plugins include:
 // import everything
 require('tailwindcss-plugin-fancy')
 
-// import just the hericons plugin
-require('tailwindcss-plugin-fancy/heroicons')
+// import just the content plugin
+require('tailwindcss-plugin-fancy/content')
 ```
 
 **Please refer to each individual plugin's documentation for instructions.**

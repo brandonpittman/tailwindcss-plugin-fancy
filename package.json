@@ -15,7 +15,7 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "clean": "del dist",
-    "build": "npm run clean && ncc build index.js -o dist -m && cpy packages/heroicons/icons/**/*.svg dist/icons",
+    "build": "npm run clean && ncc build index.js -o dist -m",
     "test": "xo --fix"
   },
   "dependencies": {},
@@ -31,7 +31,6 @@
   "devDependencies": {
     "@tailwindcss/ui": "latest",
     "@zeit/ncc": "^0.21.1",
-    "cpy-cli": "^3.1.0",
     "del-cli": "^3.0.0",
     "tailwindcss": "^1.2.0",
     "xo": "^0.27.2"

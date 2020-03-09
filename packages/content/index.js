@@ -16,12 +16,7 @@ module.exports = plugin(({addUtilities, addVariant, e}) => {
 	};
 
 	const utilities = {
-		'.visuallyhidden': {position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', opacity: '0', overflow: 'hidden', textIndent: '-9999px', zIndex: '0'},
-		'.-z-10': {zIndex: '-10'},
-		'.-z-20': {zIndex: '-20'},
-		'.-z-30': {zIndex: '-30'},
-		'.-z-40': {zIndex: '-40'},
-		'.-z-50': {zIndex: '-50'}
+		'.visuallyhidden': {position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', opacity: '0', overflow: 'hidden', textIndent: '-9999px', zIndex: '0'}
 	};
 
 	addUtilities(utilities, ['responsive']);
@@ -38,28 +33,40 @@ module.exports = plugin(({addUtilities, addVariant, e}) => {
 		});
 	});
 }, {
+	theme: {
+		extend: {
+			zIndex: {
+				'-10': '-10',
+				'-20': '-20',
+				'-30': '-30',
+				'-40': '-40',
+				'-50': '-50'
+			}
+		}
+	},
 	variants: {
-		backgroundColor: ['responsive', 'hover', 'focus', 'after', 'before', 'group-hover'],
-		backgroundImage: ['responsive', 'hover', 'focus', 'after', 'before', 'group-hover'],
+		backgroundColor: ['responsive', 'hover', 'focus', 'after', 'before', 'group-hover', 'group-focus'],
+		backgroundImage: ['responsive', 'hover', 'focus', 'after', 'before', 'group-hover', 'group-focus'],
 		borderColor: ['responsive', 'hover', 'focus', 'after', 'before'],
 		borderRadius: ['responsive', 'hover', 'focus', 'after', 'before'],
 		borderWidth: ['responsive', 'hover', 'focus', 'after', 'before'],
-		display: ['responsive', 'hover', 'focus', 'after', 'before', 'group-hover'],
+		display: ['responsive', 'hover', 'focus', 'after', 'before', 'group-hover', 'group-focus'],
 		height: ['responsive', 'hover', 'focus', 'after', 'before'],
 		inset: ['responsive', 'hover', 'focus', 'after', 'before'],
 		margin: ['responsive', 'hover', 'focus', 'after', 'before'],
-		opacity: ['responsive', 'hover', 'focus', 'after', 'before', 'group-hover'],
+		opacity: ['responsive', 'hover', 'focus', 'after', 'before', 'group-hover', 'group-focus'],
 		position: ['responsive', 'hover', 'focus', 'after', 'before'],
-		textColor: ['responsive', 'hover', 'focus', 'after', 'before', 'group-hover'],
-		width: ['responsive', 'hover', 'focus', 'after', 'before'],
-		zIndex: ['responsive', 'hover', 'focus', 'after', 'before'],
+		rotate: ['responsive', 'hover', 'focus', 'after', 'before'],
+		scale: ['responsive', 'hover', 'focus', 'after', 'before'],
+		textColor: ['responsive', 'hover', 'focus', 'after', 'before', 'group-hover', 'group-focus'],
+		textDecoration: ['responsive', 'hover', 'focus', 'after', 'before', 'group-hover', 'group-focus'],
 		transform: ['responsive', 'hover', 'focus', 'after', 'before'],
 		transformOrigin: ['responsive', 'hover', 'focus', 'after', 'before'],
-		scale: ['responsive', 'hover', 'focus', 'after', 'before'],
-		rotate: ['responsive', 'hover', 'focus', 'after', 'before'],
-		translate: ['responsive', 'hover', 'focus', 'after', 'before'],
+		transitionDuration: ['responsive', 'hover', 'focus', 'after', 'before'],
 		transitionProperty: ['responsive', 'hover', 'focus', 'after', 'before'],
 		transitionTimingFunction: ['responsive', 'hover', 'focus', 'after', 'before'],
-		transitionDuration: ['responsive', 'hover', 'focus', 'after', 'before']
+		translate: ['responsive', 'hover', 'focus', 'after', 'before'],
+		width: ['responsive', 'hover', 'focus', 'after', 'before'],
+		zIndex: ['responsive', 'hover', 'focus', 'after', 'before']
 	}
 });
