@@ -1,4 +1,5 @@
 node_modules
+dist
 *.css
 tags
 tailwind.config.js
