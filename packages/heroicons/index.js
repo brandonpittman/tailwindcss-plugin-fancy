@@ -14,12 +14,11 @@ function reducer(acc, p) {
 	return acc;
 }
 
-module.exports = plugin.withOptions((options = {
-	variants: []
-}) => {
+module.exports = plugin.withOptions((options = {variants: ['responsive']}) => {
 	return function ({addUtilities}) {
+		const variants = options.variants || ['responsive'];
 		const result = require('./paths')();
 		const utilities = result.reduce(reducer, {});
-		addUtilities(utilities, options.variants);
+		addUtilities(utilities, variants);
 	};
 });
