@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin');
 
 module.exports = plugin(({addUtilities, addVariant, e}) => {
 	const content = {
-		'.content-none': {content: '\'\''},
+		'.content-none': {content: '’’'},
 		'.content-data-src': {content: 'attr(src)'},
 		'.content-data-href': {content: 'attr(href)'},
 		'.content-data-title': {content: 'attr(title)'},
