@@ -1,7 +1,7 @@
 const plugin = require('tailwindcss/plugin');
 
-module.exports = plugin(({addUtilities, e, theme}) => {
-	addUtilities({
+module.exports = plugin(({addComponents, e, theme}) => {
+	addComponents({
 		'.keep-all': {
 			'word-break': 'break-all'
 		}
@@ -10,13 +10,13 @@ module.exports = plugin(({addUtilities, e, theme}) => {
 	const spacing = Object.entries(theme('spacing'));
 
 	for (const [prop, value] of spacing) {
-		addUtilities({
+		addComponents({
 			[`.space-y-${e(prop)} > * + *`]: {
 				marginTop: value
 			}
 		}, ['responsive']);
 
-		addUtilities({
+		addComponents({
 			[`.space-x-${e(prop)} > * + *`]: {
 				marginLeft: value
 			}
