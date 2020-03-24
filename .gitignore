@@ -3,3 +3,4 @@ dist
 *.css
 tags
 tailwind.config.js
+yarn.lock
