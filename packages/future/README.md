@@ -3,6 +3,22 @@
 These are settings that I could see being added to the Tailwind standard config
 in the future.
 
+## Spacer Components
+
+Adds `space-{x,y}-$spacing` components that add leading margins for each child
+element except for the first one. Reads `$spacing` from your theme.
+
+```css
+.space-y-4 > * + * {
+margin-top: 1rem;
+}
+```
+
+## Transition Delays
+
+Adds `transition-delay` utilities that line up with the included Tailwind
+`transition-duration` utilities. Reads from your theme.
+
 ## Enhance Tailwind 1.2 Config
 
 ```javascript
