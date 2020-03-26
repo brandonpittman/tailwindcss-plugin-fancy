@@ -8,36 +8,46 @@ const future = require('./packages/future');
 const ui = require('@tailwindcss/ui')();
 
 module.exports = plugin.withOptions(() => {
-	return function (bagOfCrap) {
-		content.handler(bagOfCrap);
-		design.handler(bagOfCrap);
-		future.handler(bagOfCrap);
-		animated.handler(bagOfCrap);
-		aspect.handler(bagOfCrap);
-		decoration.handler(bagOfCrap);
-		ui.handler(bagOfCrap);
-	};
-}, _ => {
-	return {
-		variants: {
-			...content.config.variants,
-			...ui.config.variants
-		},
-		theme: {
-			spacing: {...ui.config.theme.spacing},
-			colors: {...ui.config.theme.colors},
-			inset: (theme, options) => ({...ui.config.theme.inset(theme, options)}),
-			maxWidth: (theme, options) => ({...ui.config.theme.maxWidth(theme, options)}),
-			maxHeight: (theme, options) => ({...ui.config.theme.maxHeight(theme, options)}),
-			customForms: (theme, options) => ({...ui.config.theme.customForms(theme, options)}),
-			boxShadow: {...ui.config.theme.boxShadow},
-			extend: {
-				screens: {
-					...design.config.theme.extend.screens
-				}
-			}
-		}
-	};
+  return function (bagOfCrap) {
+    content.handler(bagOfCrap);
+    design.handler(bagOfCrap);
+    future.handler(bagOfCrap);
+    animated.handler(bagOfCrap);
+    aspect.handler(bagOfCrap);
+    decoration.handler(bagOfCrap);
+    ui.handler(bagOfCrap);
+  };
+}, options => {
+  return {
+    variants: {
+      ...content.config.variants,
+      ...ui.config.variants
+    },
+    theme: {
+      ...(options.layout === 'sidebar'
+        ? {
+          screens: {
+            sm: '640px',
+            md: '1024px', // 768 + 256
+            lg: '1280px', // 1024 + 256
+            xl: '1536px', // 1280 + 256
+          },
+        }
+        : {}),
+      spacing: {...ui.config.theme.spacing},
+      colors: {...ui.config.theme.colors},
+      inset: (theme, options) => ({...ui.config.theme.inset(theme, options)}),
+      maxWidth: (theme, options) => ({...ui.config.theme.maxWidth(theme, options)}),
+      maxHeight: (theme, options) => ({...ui.config.theme.maxHeight(theme, options)}),
+      customForms: (theme, options) => ({...ui.config.theme.customForms(theme, options)}),
+      boxShadow: {...ui.config.theme.boxShadow},
+      extend: {
+        screens: {
+          ...design.config.theme.extend.screens
+        }
+      }
+    }
+  };
 });
 
 module.exports.animated = animated;
