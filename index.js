@@ -17,23 +17,23 @@ module.exports = plugin.withOptions(() => {
     decoration.handler(bagOfCrap);
     ui.handler(bagOfCrap);
   };
-}, options => {
+}, (options = {}) => {
   return {
     variants: {
       ...content.config.variants,
       ...ui.config.variants
     },
     theme: {
-      ...(options.layout === 'sidebar'
-        ? {
+      ...(options.layout === 'sidebar' ?
+        {
           screens: {
             sm: '640px',
             md: '1024px', // 768 + 256
             lg: '1280px', // 1024 + 256
-            xl: '1536px', // 1280 + 256
-          },
-        }
-        : {}),
+            xl: '1536px' // 1280 + 256
+          }
+        } :
+        {}),
       spacing: {...ui.config.theme.spacing},
       colors: {...ui.config.theme.colors},
       inset: (theme, options) => ({...ui.config.theme.inset(theme, options)}),
