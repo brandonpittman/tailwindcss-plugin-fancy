@@ -26,12 +26,12 @@ body::-webkit-scrollbar-thumb {
 ## Utilities
 
 ```css
-- .scrollbar /* You need to add this to make the other utilities work, a la Tailwind's transform utility.) */
-- .scrollbar-thumb-$color
-- .scrollbar-track-$color
-- .scrollbar-auto /* 14px for -webkit */
-- .scrollbar-thin /* 12px for -webkit */
-- .scrollbar-none
+.scrollbar /* You need to add this to make the other utilities work, a la Tailwind's transform utility.) */
+.scrollbar-thumb-$color
+.scrollbar-track-$color
+.scrollbar-auto /* 14px for -webkit */
+.scrollbar-thin /* 12px for -webkit */
+.scrollbar-none
 ```
 
 The `$color` bit can be any color in your theme. For best results, apply the utilities to the `html` tag in your templates. Since they're just utilities, you can apply different ones to scrollable elements within your site to have multiple styles.
