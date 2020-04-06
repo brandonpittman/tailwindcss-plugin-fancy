@@ -25,7 +25,7 @@ body::-webkit-scrollbar-thumb {
 
 ## Utilities
 
-- .scrollbar
+- .scrollbar (You need to add this to make the other utilities work, a la Tailwind's transform utility.)
 - .scrollbar-thumb-$color
 - .scrollbar-track-$color
 - .scrollbar-auto
