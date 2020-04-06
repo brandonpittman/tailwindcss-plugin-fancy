@@ -22,3 +22,14 @@ body::-webkit-scrollbar-thumb {
   border: 3px solid orange;  /* creates padding around scroll thumb */
 }
 ```
+
+## Utilities
+
+- .scrollbar
+- .scrollbar-thumb-$color
+- .scrollbar-track-$color
+- .scrollbar-auto
+- .scrollbar-thin
+- .scrollbar-none
+
+The `$color` bit can be any color in your theme. For best results, apply the utilities to the `html` tag in your templates. Since they're just utilities, you can apply different ones to scrollable elements within your site to have multiple styles.
