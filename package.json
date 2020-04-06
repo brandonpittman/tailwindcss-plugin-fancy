@@ -13,7 +13,7 @@
     "packages"
   ],
   "scripts": {
-    "prepublishOnly": "npm run build",
+    "prePublishOnly": "npm run build",
     "clean": "del dist",
     "build": "npm run clean && ncc build index.js -o dist -m",
     "test": "xo --fix"
