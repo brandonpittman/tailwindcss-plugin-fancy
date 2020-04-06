@@ -4,3 +4,4 @@ dist
 tags
 tailwind.config.js
 yarn.lock
+index.html
