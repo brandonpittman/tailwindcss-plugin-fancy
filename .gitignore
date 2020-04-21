@@ -5,3 +5,4 @@ tags
 tailwind.config.js
 yarn.lock
 index.html
+package-lock.json
