@@ -1,38 +1,38 @@
-const plugin = require('tailwindcss/plugin')
+const plugin = require("tailwindcss/plugin");
 
 module.exports = plugin(
   ({ addUtilities, addComponents, e, theme, variants }) => {
     addUtilities(
       {
-        ...require('./lib/sizes')
+        ...require("./lib/sizes"),
       },
-      ['responsive', 'hover']
-    )
+      ["responsive", "hover"]
+    );
 
     addComponents(
       {
-        ...require('./lib/shakes'),
-        ...require('./lib/spins'),
-        ...require('./lib/resizes'),
-        ...require('./lib/keyframes')({ theme, e })
+        ...require("./lib/shakes"),
+        ...require("./lib/spins"),
+        ...require("./lib/resizes"),
+        ...require("./lib/keyframes")({ theme, e }),
       },
-      ['responsive', 'hover']
-    )
+      ["responsive", "hover"]
+    );
 
     addUtilities(
       {
-        ...require('./lib/gradients')({ theme, e })
+        ...require("./lib/gradients")({ theme, e }),
       },
-      variants('gradients'),
-      ['responsive', 'hover']
-    )
+      variants("gradients"),
+      ["responsive", "hover"]
+    );
 
     addUtilities(
       {
-        ...require('./lib/animations')({ theme, e })
+        ...require("./lib/animations")({ theme, e }),
       },
-      variants('animations'),
-      ['responsive', 'hover']
-    )
+      variants("animations"),
+      ["responsive", "hover"]
+    );
   }
-)
+);

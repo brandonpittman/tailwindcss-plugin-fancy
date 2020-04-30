@@ -1,61 +1,61 @@
-const plugin = require('tailwindcss/plugin')
+const plugin = require("tailwindcss/plugin");
 
-function addNewComponent (addComponents, key, value) {
+function addNewComponent(addComponents, key, value) {
   addComponents({
-    '@media(prefers-color-scheme: light)': {
+    "@media(prefers-color-scheme: light)": {
       [`.text-${key}`]: {
-        color: value[0]
+        color: value[0],
       },
       [`.text-on-${key}`]: {
-        color: value[1]
+        color: value[1],
       },
       [`.bg-${key}`]: {
-        backgroundColor: value[0]
-      }
-    }
-  })
+        backgroundColor: value[0],
+      },
+    },
+  });
 
   if (value.length > 2) {
     addComponents({
-      '@media(prefers-color-scheme: dark)': {
+      "@media(prefers-color-scheme: dark)": {
         [`.text-${key}`]: {
-          color: value[2]
+          color: value[2],
         },
         [`.bg-${key}`]: {
-          backgroundColor: value[2]
-        }
-      }
-    })
+          backgroundColor: value[2],
+        },
+      },
+    });
   }
 
   if (value.length > 3) {
     addComponents({
-      '@media(prefers-color-scheme: dark)': {
+      "@media(prefers-color-scheme: dark)": {
         [`.text-on-${key}`]: {
-          color: value[3]
-        }
-      }
-    })
+          color: value[3],
+        },
+      },
+    });
   }
 }
 
 module.exports = plugin(
   ({ addComponents, theme }) => {
-    const { text, color } = theme('design') || { text: {}, color: {} }
+    const { text, color } = theme("design") || { text: {}, color: {} };
 
     if (Object.keys(text).length > 0) {
       for (const [key, value] of Object.entries(text)) {
         addComponents({
           [`.text-${key}`]: {
-            ...value
-          }
-        })
+            ...value,
+          },
+        });
       }
     }
 
     if (Object.keys(color).length > 0) {
       for (const [key, value] of Object.entries(color)) {
-        addNewComponent(addComponents, key, value)
+        addNewComponent(addComponents, key, value);
       }
     }
   },
@@ -63,10 +63,10 @@ module.exports = plugin(
     theme: {
       extend: {
         screens: {
-          dark: { raw: '(prefers-color-scheme: dark)' },
-          light: { raw: '(prefers-color-scheme: light)' }
-        }
-      }
-    }
+          dark: { raw: "(prefers-color-scheme: dark)" },
+          light: { raw: "(prefers-color-scheme: light)" },
+        },
+      },
+    },
   }
-)
+);

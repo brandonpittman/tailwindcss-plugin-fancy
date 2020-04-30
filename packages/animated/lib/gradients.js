@@ -1,25 +1,25 @@
-const _ = require('lodash')
+const _ = require("lodash");
 
 module.exports = function ({ theme, e }) {
-  const gradients = {}
+  const gradients = {};
 
-  _.map(theme('gradients', {}), (gradient, name) => {
+  _.map(theme("gradients", {}), (gradient, name) => {
     const type =
       _.isPlainObject(gradient) &&
-      Object.prototype.hasOwnProperty.call(gradient, 'type')
+      Object.prototype.hasOwnProperty.call(gradient, "type")
         ? gradient.type
-        : 'linear'
+        : "linear";
     const direction =
       _.isPlainObject(gradient) &&
-      Object.prototype.hasOwnProperty.call(gradient, 'direction')
+      Object.prototype.hasOwnProperty.call(gradient, "direction")
         ? gradient.direction
-        : 'to right'
-    const colors = _.isPlainObject(gradient) ? gradient.colors || [] : gradient
+        : "to right";
+    const colors = _.isPlainObject(gradient) ? gradient.colors || [] : gradient;
 
     gradients[`.bg-${e(name)}`] = {
-      backgroundImage: `${type}-gradient(${direction}, ${colors.join(', ')})`
-    }
-  })
+      backgroundImage: `${type}-gradient(${direction}, ${colors.join(", ")})`,
+    };
+  });
 
-  return gradients
-}
+  return gradients;
+};
