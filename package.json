@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/brandonpittman/tailwindcss-plugin-fancy#readme",
   "devDependencies": {
-    "@tailwindcss/ui": "^0.2.2",
+    "@tailwindcss/ui": "^0.3.0",
     "@zeit/ncc": "^0.22.1",
     "del-cli": "^3.0.0",
     "eslint": "^7.0.0",
