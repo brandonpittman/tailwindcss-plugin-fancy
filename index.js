@@ -1,12 +1,10 @@
 const plugin = require("tailwindcss/plugin");
-const animated = require("./packages/animated");
 const aspect = require("./packages/aspect");
 const content = require("./packages/content");
 const decoration = require("./packages/decoration");
 const design = require("./packages/design");
 const future = require("./packages/future");
 const scrollbars = require("./packages/scrollbars");
-const ui = require("@tailwindcss/ui")();
 
 module.exports = plugin.withOptions(
   () => {
@@ -15,44 +13,16 @@ module.exports = plugin.withOptions(
       design.handler(bagOfCrap);
       future.handler(bagOfCrap);
       scrollbars.handler(bagOfCrap);
-      animated.handler(bagOfCrap);
       aspect.handler(bagOfCrap);
       decoration.handler(bagOfCrap);
-      ui.handler(bagOfCrap);
     };
   },
-  (options = {}) => {
+  (_options = {}) => {
     return {
       variants: {
         ...content.config.variants,
-        ...ui.config.variants,
       },
       theme: {
-        ...(options.layout === "sidebar"
-          ? {
-              screens: {
-                sm: "640px",
-                md: "1024px", // 768 + 256
-                lg: "1280px", // 1024 + 256
-                xl: "1536px", // 1280 + 256
-              },
-            }
-          : {}),
-        spacing: { ...ui.config.theme.spacing },
-        colors: { ...ui.config.theme.colors },
-        inset: (theme, options) => ({
-          ...ui.config.theme.inset(theme, options),
-        }),
-        maxWidth: (theme, options) => ({
-          ...ui.config.theme.maxWidth(theme, options),
-        }),
-        maxHeight: (theme, options) => ({
-          ...ui.config.theme.maxHeight(theme, options),
-        }),
-        customForms: (theme, options) => ({
-          ...ui.config.theme.customForms(theme, options),
-        }),
-        boxShadow: { ...ui.config.theme.boxShadow },
         extend: {
           screens: {
             ...design.config.theme.extend.screens,
@@ -63,7 +33,6 @@ module.exports = plugin.withOptions(
   }
 );
 
-module.exports.animated = animated;
 module.exports.aspect = aspect;
 module.exports.content = content;
 module.exports.decoration = decoration;

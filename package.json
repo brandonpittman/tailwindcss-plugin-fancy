@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-plugin-fancy",
-  "version": "1.2.24",
+  "version": "2.0.0",
   "description": "A collection of other Tailwind CSS plugins all rolled up for your convenience.",
   "main": "./dist/index.js",
   "repository": {
