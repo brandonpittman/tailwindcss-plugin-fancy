@@ -4,10 +4,10 @@ module.exports = plugin(({ addUtilities, variants }) => {
   addUtilities(
     {
       ".aspect-wide": {
-        "padding-block-start": "56.25%",
+        "padding-top": "56.25%",
       },
       ".aspect-square": {
-        "padding-block-start": "100%",
+        "padding-top": "100%",
       },
     },
     variants("aspect-ratio", ["responsive", "hover"])
