@@ -46,16 +46,9 @@ module.exports = plugin(({ addUtilities, variants, theme }) => {
     },
   };
 
-  // Text-decoration-color
   const decorationColors = {
     ".decoration-current": {
       textDecorationColor: "currentColor",
-    },
-    ".bg-current": {
-      backgroundColor: "currentColor",
-    },
-    ".border-current": {
-      borderColor: "currentColor",
     },
   };
 
@@ -85,7 +78,6 @@ module.exports = plugin(({ addUtilities, variants, theme }) => {
     }
   }
 
-  // Finalize utilities
   const decorations = {
     ...decorationLines,
     ...decorationColors,
