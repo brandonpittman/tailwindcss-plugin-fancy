@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-plugin-fancy",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A collection of other Tailwind CSS plugins all rolled up for your convenience.",
   "main": "./dist/index.js",
   "repository": {
@@ -15,8 +15,7 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "clean": "del dist",
-    "build": "npm run clean && ncc build index.js -o dist -m",
-    "test": "xo --fix"
+    "build": "npm run clean && ncc build index.js -o dist -m"
   },
   "dependencies": {},
   "keywords": [
