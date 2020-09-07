@@ -29,11 +29,10 @@
   },
   "homepage": "https://github.com/brandonpittman/tailwindcss-plugin-fancy#readme",
   "devDependencies": {
-    "@tailwindcss/ui": "^0.5.0",
     "@zeit/ncc": "^0.22.1",
     "del-cli": "^3.0.0",
     "eslint": "^7.0.0",
     "prettier": "^2.0.5",
-    "tailwindcss": ">=1.4.0"
+    "tailwindcss": ">=1.8.3"
   }
 }
