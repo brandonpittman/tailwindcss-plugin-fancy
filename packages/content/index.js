@@ -47,8 +47,10 @@ module.exports = plugin(
   {
     variants: {
       backgroundColor: ({ after }) => after(["before", "after"], "focus"),
+      backgroundOpacity: ({ after }) => after(["before", "after"], "focus"),
       backgroundImage: ({ after }) => after(["before", "after"], "focus"),
       borderColor: ({ after }) => after(["before", "after"], "focus"),
+      borderOpacity: ({ after }) => after(["before", "after"], "focus"),
       borderRadius: ({ after }) => after(["before", "after"], "focus"),
       borderWidth: ({ after }) => after(["before", "after"], "focus"),
       display: ({ after }) => after(["before", "after"], "focus"),
@@ -60,6 +62,7 @@ module.exports = plugin(
       rotate: ({ after }) => after(["before", "after"], "focus"),
       scale: ({ after }) => after(["before", "after"], "focus"),
       textColor: ({ after }) => after(["before", "after"], "focus"),
+      textOpacity: ({ after }) => after(["before", "after"], "focus"),
       textDecoration: ({ after }) => after(["before", "after"], "focus"),
       transform: ({ after }) => after(["before", "after"], "focus"),
       transformOrigin: ({ after }) => after(["before", "after"], "focus"),
