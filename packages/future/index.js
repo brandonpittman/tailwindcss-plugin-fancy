@@ -20,15 +20,14 @@ const widthReducer = (e) => (acc, cur) => ({
   },
 });
 
-
-module.exports = plugin(({ addUtilities, e }) => {
+module.exports = plugin(({ addUtilities, theme, e }) => {
   addUtilities(
     {
       ".debug": {
         border: "1px solid red",
       },
       ...delays,
-      ...Object.entries(defaultTheme.width).reduce(
+      ...Object.entries(theme("width")).reduce(
         (acc, cur) => widthReducer(e)(acc, cur),
         {}
       ),
