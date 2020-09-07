@@ -26,32 +26,8 @@ module.exports = function ({ theme, e }) {
     ".bg-warp-lightspeed": {
       animation: "bg-warp 200ms ease-in-out infinite alternate",
     },
-    ".spin-slowest": {
-      animation: "spin 20 linear infinite",
-    },
-    ".spin-slower": {
-      animation: "spin 16s linear infinite",
-    },
-    ".spin-slow": {
-      animation: "spin 8s linear infinite",
-    },
-    ".spin": {
-      animation: "spin 4s linear infinite",
-    },
-    ".spin-fast": {
-      animation: "spin 2s linear infinite",
-    },
-    ".spin-faster": {
-      animation: "spin 1s linear infinite",
-    },
-    ".spin-fastest": {
-      animation: "spin 500ms linear infinite",
-    },
     ".shake": {
       animation: "shake 500ms",
-    },
-    ".bounce": {
-      animation: "bounce 500ms infinite ease-in-out alternate",
     },
   };
 
