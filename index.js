@@ -8,7 +8,6 @@ const scrollbars = require("./packages/scrollbars");
 module.exports = plugin.withOptions(
   () => {
     return function (bagOfCrap) {
-      console.log(bagOfCrap);
       content.handler(bagOfCrap);
       future.handler(bagOfCrap);
       scrollbars.handler(bagOfCrap);
