@@ -1,26 +1,19 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = plugin(({ addUtilities, theme, e }) => {
-  const delayReducer = (acc, cur) => ({
-    ...acc,
-    [`.animate-delay-${cur[0]}`]: {
-      animationDelay: cur[1],
-    },
-  });
-
-  const widthReducer = (acc, cur) => ({
-    ...acc,
-    [`.${e(`basis-${cur[0]}`)}`]: {
-      flexBasis: cur[1],
-    },
-  });
-
-  const delays = Object.entries(theme("transitionDelay")).reduce(
-    delayReducer,
-    {}
+  const delays = Object.fromEntries(
+    Object.entries(theme("transitionDelay")).map(([k, v]) => [
+      `.animate-delay-${k}`,
+      { animationDelay: v },
+    ])
   );
 
-  const basises = Object.entries(theme("width")).reduce(widthReducer, {});
+  const basises = Object.fromEntries(
+    Object.entries(theme("width")).map(([k, v]) => [
+      `.${e(`basis-${k}`)}`,
+      { flexBasis: v },
+    ])
+  );
 
   addUtilities(
     {
