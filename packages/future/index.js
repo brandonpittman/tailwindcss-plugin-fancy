@@ -18,7 +18,7 @@ module.exports = plugin(({ addUtilities, theme, e }) => {
   addUtilities(
     {
       ".debug": {
-        border: "1px solid red",
+        border: `1px solid ${theme("colors.red['600']")}`,
       },
       ...delays,
       ...basises,
