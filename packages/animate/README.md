@@ -29,7 +29,7 @@ transition utilities. This plugin adds support for the following:
   /* delay-${n} */
 }
 
-.animate-${ease} {
+.animate-ease-${ease} {
   animation-timing-function: /* ease-${linear, in, out, in-out} */
 }
 
