@@ -1,6 +1,8 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = plugin(({ addUtilities, theme, e }) => {
+  const userOptions = theme("animate", { iterate: [] });
+
   const delays = Object.fromEntries(
     Object.entries(theme("transitionDelay")).map(([k, v]) => [
       `.animate-delay-${k}`,
@@ -54,6 +56,7 @@ module.exports = plugin(({ addUtilities, theme, e }) => {
 
   const iterations = Object.fromEntries(
     [
+      ...userOptions.iterate,
       "0",
       "1",
       "2",
