@@ -70,3 +70,37 @@ theme: {
 
 The iteration values must be strings. Pure numbers will be rendered as `px` by
 Tailwind otherwise.
+
+## New in 2.4
+
+`animation-timing-function` gets support for steps!
+
+```css
+.animate-steps-5 {
+  animation-timing-function: steps(5);
+}
+
+.animate-step-start {
+  animation-timing-function: steps(1, jump-start);
+}
+
+.animate-step-end {
+  animation-timing-function: steps(1, jump-end);
+}
+```
+
+Steps go from 0–12, then 15, 30, 45, and 60 by default.
+
+Add your own in `tailwind.config.js`.
+
+```javascript
+theme: {
+  extend: {
+    animate: {
+      steps: [
+        17, // creates a steps(17) class as .animate-step-17
+        [47, "jump-both"]  // creates a steps(47, jump-both) class as .animate-step-47-jump-both
+    }
+  }
+}
+```
