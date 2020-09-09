@@ -4,15 +4,13 @@ const content = require("./packages/content");
 const decoration = require("./packages/decoration");
 const future = require("./packages/future");
 const scrollbars = require("./packages/scrollbars");
+const animate = require("./packages/animate");
 
 module.exports = plugin.withOptions(
   () => {
-    return function (bagOfCrap) {
-      content.handler(bagOfCrap);
-      future.handler(bagOfCrap);
-      scrollbars.handler(bagOfCrap);
-      aspect.handler(bagOfCrap);
-      decoration.handler(bagOfCrap);
+    return function (helpers) {
+      let plugins = [content, future, scrollbars, aspect, decoration, animate];
+      plugins.forEach((plugin) => plugin.handler(helpers));
     };
   },
   (_options = {}) => {
@@ -21,7 +19,13 @@ module.exports = plugin.withOptions(
         ...content.config.variants,
       },
       theme: {
-        extend: {},
+        extend: {
+          keyframes: {
+            testing: {
+              to: { opacity: 1 },
+            },
+          },
+        },
       },
     };
   }
@@ -32,3 +36,4 @@ module.exports.content = content;
 module.exports.decoration = decoration;
 module.exports.future = future;
 module.exports.scrollbars = scrollbars;
+module.exports.animate = animate;

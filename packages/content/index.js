@@ -16,22 +16,6 @@ module.exports = plugin(
       ".content-close-quote": { content: "close-quote" },
     };
 
-    const utilities = {
-      ".visuallyhidden": {
-        position: "absolute",
-        top: "0",
-        left: "0",
-        width: "100%",
-        height: "100%",
-        opacity: "0",
-        overflow: "hidden",
-        textIndent: "-9999px",
-        zIndex: "0",
-      },
-    };
-
-    addUtilities(utilities, ["responsive"]);
-
     addUtilities(content, { variants: ["before", "after"] });
 
     const variants = ["before", "after"];
