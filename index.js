@@ -15,6 +15,7 @@ module.exports = plugin(
   {
     variants: {
       ...content.config.variants,
+      ...animate.config.variants,
     },
     theme: {
       extend: {

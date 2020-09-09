@@ -132,6 +132,9 @@ module.exports = plugin(
         ...modes,
         ...directions,
         ...iterations,
+        ".animate-none": {
+          animationName: "none",
+        },
         ".animate-spin": {
           animationName: "spin",
           animationDuration: "1s",
@@ -156,7 +159,7 @@ module.exports = plugin(
           animationIterationCount: "infinite",
         },
       },
-      ["responsive"]
+      ["responsive", "hover", "focus", "group-hover", "group-focus"]
     );
   },
   {
