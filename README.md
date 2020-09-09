@@ -10,6 +10,11 @@ Tailwind that makes my life/job easier. Plugins include:
 - [tailwindcss-plugin-scrollbars](https://github.com/brandonpittman/tailwindcss-plugin-fancy/tree/master/packages/scrollbars)
 - [tailwindcss-plugin-future](https://github.com/brandonpittman/tailwindcss-plugin-fancy/tree/master/packages/future)
 
+## Extensions
+
+`min-h`, `max-h`, `min-w`, and `max-w` all get extended to the full `width` list of your
+`theme`.
+
 ## Usage
 
 ```javascript
