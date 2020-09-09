@@ -6,9 +6,10 @@ const future = require("./packages/future");
 const scrollbars = require("./packages/scrollbars");
 const animate = require("./packages/animate");
 
+const plugins = [content, future, scrollbars, aspect, decoration, animate];
+
 module.exports = plugin(
   (helpers) => {
-    let plugins = [content, future, scrollbars, aspect, decoration, animate];
     plugins.forEach((plugin) => plugin.handler(helpers));
   },
   {
@@ -21,6 +22,7 @@ module.exports = plugin(
         maxWidth: (theme) => theme("width"),
         minHeight: (theme) => theme("height"),
         maxHeight: (theme) => theme("height"),
+        ...animate.config.theme,
       },
     },
   }
