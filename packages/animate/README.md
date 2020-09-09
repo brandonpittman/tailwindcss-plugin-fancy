@@ -41,7 +41,7 @@ transition utilities. This plugin adds support for the following:
   animation-play-state: paused
 }
 
-.animate-${normal, reverse, alternate, alternate-reverse} {
+.direction-${normal, reverse, alternate, alternate-reverse} {
   animation-direction: /* normal, reverse, alternate, alternate-reverse */
 }
 
