@@ -137,26 +137,15 @@ module.exports = plugin(
         },
         ".animate-spin": {
           animationName: "spin",
-          animationDuration: "1s",
-          animationTimingFunction: "linear",
-          animationIterationCount: "infinite",
         },
         ".animate-ping": {
           animationName: "ping",
-          animationDuration: "1s",
-          animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)",
-          animationIterationCount: "infinite",
         },
         ".animate-pulse": {
           animationName: "pulse",
-          animationDuration: "2s",
-          animationTimingFunction: "cubic-bezier(0.4, 0, 0.6, 1)",
-          animationIterationCount: "infinite",
         },
         ".animate-bounce": {
           animationName: "bounce",
-          animationDuration: "1s",
-          animationIterationCount: "infinite",
         },
       },
       ["responsive", "hover", "focus", "group-hover", "group-focus"]
