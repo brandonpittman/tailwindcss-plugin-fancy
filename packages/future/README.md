@@ -3,6 +3,10 @@
 These are settings that I could see being added to the Tailwind standard config
 in the future.
 
+## Touch
+
+There's a `touch` variant that targets `@media(hover: none)`. 
+
 ## Flex-basis
 
 These utilities add `.basis-${width}` matching everything in your `width` theme key.
