@@ -30,7 +30,8 @@ module.exports = plugin(({ addUtilities, theme }) => {
       "--scrollbar-thumb": "#b5b5b5",
       "--scrollbar-track": "#f9f9f9",
       "--scrollbar-width": "auto",
-      "--scrollbar-width-webkit": "14px",
+      "--scrollbar-width-webkit": "13px",
+      "--scrollbar-height-webkit": "13px",
 
       scrollbarWidth: "var(--scrollbar-width, initial)",
       scrollbarColor:
@@ -38,6 +39,7 @@ module.exports = plugin(({ addUtilities, theme }) => {
 
       "&::-webkit-scrollbar": {
         width: "var(--scrollbar-width-webkit)",
+        height: "var(--scrollbar-height-webkit)",
       },
 
       "&::-webkit-scrollbar-track": {
@@ -52,15 +54,22 @@ module.exports = plugin(({ addUtilities, theme }) => {
     },
     ".scrollbar-auto": {
       scrollbarWidth: "auto",
-      "--scrollbar-width-webkit": "14px",
+      "&::-webkit-scrollbar": {
+        display: "initial",
+      },
+      "--scrollbar-width-webkit": "13px",
+      "--scrollbar-height-webkit": "13px",
     },
     ".scrollbar-thin": {
       scrollbarWidth: "thin",
       "--scrollbar-width-webkit": "12px",
+      "--scrollbar-height-webkit": "12px",
     },
     ".scrollbar-none": {
       scrollbarWidth: "none",
-      "--scrollbar-width-webkit": "0px",
+      "&::-webkit-scrollbar": {
+        display: "none",
+      },
     },
     ...scrollbarColors,
   });
