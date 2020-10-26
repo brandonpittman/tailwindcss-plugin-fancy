@@ -11,6 +11,25 @@ module.exports = plugin(({ addVariant, addUtilities, theme, e }) => {
 
   addUtilities(
     {
+      ".bg-skinny": {
+        backgroundSize: "0% 100%",
+      },
+      ".bg-flat": {
+        backgroundSize: "100% 0%",
+      },
+      ".bg-full": {
+        backgroundSize: "100% 100%",
+      },
+      ".bg-fat": {
+        backgroundSize: "200% 200%",
+      },
+      ".bg-jumbo": {
+        backgroundSize: "400% 400%",
+      },
+      "@keyframes bg-warp": {
+        from: { "background-position": "right" },
+        to: { "background-position": "left" },
+      },
       ".debug": {
         border: `1px solid ${theme("colors.red['600']")}`,
       },
