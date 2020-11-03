@@ -1,5 +1,5 @@
 const plugin = require("tailwindcss/plugin");
-// const postcss = require("postcss");
+const postcss = require("postcss");
 
 module.exports = plugin(({ addVariant, addUtilities, theme, e }) => {
   const basises = Object.fromEntries(
