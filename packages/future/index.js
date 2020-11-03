@@ -1,5 +1,5 @@
 const plugin = require("tailwindcss/plugin");
-const postcss = require("postcss");
+// const postcss = require("postcss");
 
 module.exports = plugin(({ addVariant, addUtilities, theme, e }) => {
   const basises = Object.fromEntries(
@@ -8,7 +8,12 @@ module.exports = plugin(({ addVariant, addUtilities, theme, e }) => {
       { flexBasis: v },
     ])
   );
-
+  addUtilities({
+    "@keyframes bg-warp": {
+      from: { "background-position": "right" },
+      to: { "background-position": "left" },
+    },
+  });
   addUtilities(
     {
       ".bg-skinny": {
@@ -26,10 +31,6 @@ module.exports = plugin(({ addVariant, addUtilities, theme, e }) => {
       ".bg-jumbo": {
         backgroundSize: "400% 400%",
       },
-      "@keyframes bg-warp": {
-        from: { "background-position": "right" },
-        to: { "background-position": "left" },
-      },
       ".debug": {
         border: `1px solid ${theme("colors.red['600']")}`,
       },
@@ -37,7 +38,6 @@ module.exports = plugin(({ addVariant, addUtilities, theme, e }) => {
     },
     ["responsive"]
   );
-
   addVariant("touch", ({ container, separator }) => {
     const supportsRule = postcss.atRule({
       name: "media",
@@ -50,3 +50,4 @@ module.exports = plugin(({ addVariant, addUtilities, theme, e }) => {
     });
   });
 });
+
