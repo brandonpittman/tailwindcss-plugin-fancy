@@ -21,11 +21,11 @@ transition utilities. This plugin adds support for the following:
   /* the name is a keyframe just how the standard Tailwind animation plugin requires */
 }
 
-.animate-duration {
+.animate-duration-${n} {
   /* duration-${n} */
 }
 
-.animate-delay {
+.animate-delay-${n} {
   /* delay-${n} */
 }
 
