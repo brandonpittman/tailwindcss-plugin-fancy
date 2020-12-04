@@ -68,7 +68,7 @@ module.exports = plugin(
       ".animate-step-end": { animationTimingFunction: "jump-end" },
       ...Object.fromEntries(
         Object.entries(theme("transitionTimingFunction")).map(([k, v]) => [
-          `.animate-ease-${k}`,
+          k === "DEFAULT" ? ".animate-ease" : `.animate-ease-${k}`,
           { animationTimingFunction: v },
         ])
       ),
