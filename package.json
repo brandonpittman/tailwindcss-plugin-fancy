@@ -12,11 +12,9 @@
     "packages"
   ],
   "scripts": {},
-  "dependencies": {
-    "postcss": "^8.1.1"
-  },
   "peerDependencies": {
-    "tailwindcss": ">=1.8.5"
+    "postcss": "^8.1.14",
+    "tailwindcss": ">=2.0.1"
   },
   "keywords": [
     "tailwindcss"
@@ -28,6 +26,6 @@
   },
   "homepage": "https://github.com/brandonpittman/tailwindcss-plugin-fancy#readme",
   "devDependencies": {
-    "prettier": "^2.1.1"
+    "prettier": "^2.2.1"
   }
 }
