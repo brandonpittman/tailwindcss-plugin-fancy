@@ -30,8 +30,8 @@ module.exports = plugin(({ addUtilities, theme }) => {
       "--scrollbar-thumb": "#b5b5b5",
       "--scrollbar-track": "#f9f9f9",
       "--scrollbar-width": "auto",
-      "--scrollbar-width-webkit": "13px",
-      "--scrollbar-height-webkit": "13px",
+      "--scrollbar-width-webkit": "16px",
+      "--scrollbar-height-webkit": "16px",
 
       scrollbarWidth: "var(--scrollbar-width, initial)",
       scrollbarColor:
@@ -57,19 +57,27 @@ module.exports = plugin(({ addUtilities, theme }) => {
       "&::-webkit-scrollbar": {
         display: "initial",
       },
-      "--scrollbar-width-webkit": "13px",
-      "--scrollbar-height-webkit": "13px",
+      "--scrollbar-width-webkit": "16px",
+      "--scrollbar-height-webkit": "16px",
     },
     ".scrollbar-thin": {
       scrollbarWidth: "thin",
-      "--scrollbar-width-webkit": "12px",
-      "--scrollbar-height-webkit": "12px",
+      "--scrollbar-width-webkit": "11px",
+      "--scrollbar-height-webkit": "11px",
     },
     ".scrollbar-none": {
       scrollbarWidth: "none",
       "&::-webkit-scrollbar": {
         display: "none",
       },
+    },
+    ".scrollbar-y-none": {
+      scrollbarWidth: "none",
+      "--scrollbar-width-webkit": "0px",
+    },
+    ".scrollbar-x-none": {
+      scrollbarWidth: "none",
+      "--scrollbar-height-webkit": "0px",
     },
     ...scrollbarColors,
   });
