@@ -1,7 +1,8 @@
 const plugin = require("tailwindcss/plugin");
 const postcss = require("postcss");
+const selectorParser = require("postcss-selector-parser");
 
-module.exports = plugin(({ addVariant, addUtilities, theme, e }) => {
+module.exports = plugin(({ addVariant, addUtilities, config, theme, e }) => {
   const basises = Object.fromEntries(
     Object.entries(theme("width")).map(([k, v]) => [
       `.${e(`basis-${k}`)}`,
@@ -38,6 +39,62 @@ module.exports = plugin(({ addVariant, addUtilities, theme, e }) => {
     },
     ["responsive"]
   );
+  addVariant("group-disabled", ({ modifySelectors, separator }) => {
+    const prefixClass = function (className) {
+      const prefix = config("prefix");
+      const getPrefix = typeof prefix === "function" ? prefix : () => prefix;
+      return `${getPrefix(`.${className}`)}${className}`;
+    };
+
+    return modifySelectors(({ selector }) => {
+      // This would be the better solution once :is() can be used in
+      // Chrome.
+      //   const is = selectorParser(selectors => {
+      //     selectors.walkClasses(classNode => {
+      //       classNode.value = `group-disabled${separator}${classNode.value}`;
+      //       classNode.parent.insertBefore(
+      //         classNode,
+      //         selectorParser().astSync(
+      //           `:is(.${prefixClass("group")}[disabled],.${prefixClass(
+      //             "group"
+      //           )}:disabled) `
+      //         )
+      //       );
+      //     });
+      //   }).processSync(selector);
+      // });
+      const attr = selectorParser((selectors) => {
+        selectors.walkClasses((classNode) => {
+          classNode.value = `group-disabled${separator}${classNode.value}`;
+          classNode.parent.insertBefore(
+            classNode,
+            selectorParser().astSync(`.${prefixClass("group")}[disabled] `)
+          );
+        });
+      }).processSync(selector);
+      const pseudo = selectorParser((selectors) => {
+        selectors.walkClasses((classNode) => {
+          classNode.value = `group-disabled${separator}${classNode.value}`;
+          classNode.parent.insertBefore(
+            classNode,
+            selectorParser().astSync(`.${prefixClass("group")}:disabled `)
+          );
+        });
+      }).processSync(selector);
+
+      return attr + ", " + pseudo;
+    });
+  });
+  addVariant("invalid", ({ modifySelectors, separator }) => {
+    modifySelectors(({ className }) => {
+      return `.${e(`invalid${separator}${className}`)}:invalid`;
+    });
+  });
+  addVariant("invalid-focus", ({ modifySelectors, separator }) => {
+    modifySelectors(({ className }) => {
+      return `.${e(`invalid-focus${separator}${className}`)}:invalid:focus`;
+    });
+  });
   addVariant("touch", ({ container, separator }) => {
     const supportsRule = postcss.atRule({
       name: "media",
@@ -50,4 +107,3 @@ module.exports = plugin(({ addVariant, addUtilities, theme, e }) => {
     });
   });
 });
-
