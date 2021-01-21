@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/brandonpittman/tailwindcss-plugin-fancy#readme",
   "devDependencies": {
+    "postcss": "^8.2.4",
     "prettier": "^2.2.1"
   },
   "dependencies": {
