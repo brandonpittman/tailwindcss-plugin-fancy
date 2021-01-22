@@ -31,3 +31,17 @@ These utilities add `.animate-delay-${delay}` matching everything in your
 ## Misc.
 
 Adds a `.debug` utility that puts a red box around an element (for debugging).
+
+### Bleed
+
+Adds `.bleed` and `.bleed-grid` components to to make blog-style full bleed images easier to handle.
+
+### Scroll Snap
+
+Adds scroll-snap utils.
+
+```
+.scroll-snap-none
+.scroll-snap-x
+.scroll-snap-y
+```
