@@ -30,6 +30,12 @@ These utilities add `.animate-delay-${delay}` matching everything in your
 
 ## Misc.
 
+### Glassmorphism
+
+Adds `bg-glass-{0,1,2,3,4,5}` utils that, when combined with existing Tailwind utils, allows you to achieve a _glassmorphic_ style.
+
+### Debug
+
 Adds a `.debug` utility that puts a red box around an element (for debugging).
 
 ### Bleed
