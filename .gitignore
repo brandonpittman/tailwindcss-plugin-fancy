@@ -2,7 +2,5 @@ node_modules
 dist
 *.css
 tags
-tailwind.config.js
 yarn.lock
-index.html
 package-lock.json
