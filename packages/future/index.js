@@ -1,9 +1,23 @@
 const plugin = require("tailwindcss/plugin");
+const defaultTheme = require("tailwindcss/defaultTheme");
 const postcss = require("postcss");
 const selectorParser = require("postcss-selector-parser");
 
+const makeBlur = (v) => ({
+  backdropFilter: `blur(${defaultTheme.spacing[v]})`,
+  "-webkit-backdrop-filter": `blur(${defaultTheme.spacing[v]})`,
+});
+
+const blurScale = [...new Array(6)].map((_v, idx) => idx);
+
+const blurs = Object.fromEntries(
+  blurScale.map((v) => [`.bg-glass-${v}`, makeBlur(v)])
+);
+
 module.exports = plugin(
   ({ addVariant, addComponents, addUtilities, config, theme, e }) => {
+    addUtilities(blurs, ["responsive"]);
+
     const fullBleed = {
       ".bleed-grid": {
         display: "grid",
