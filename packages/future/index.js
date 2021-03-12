@@ -10,9 +10,10 @@ const makeBlur = (v) => ({
 
 const blurScale = [...new Array(6)].map((_v, idx) => idx);
 
-const blurs = Object.fromEntries(
-  blurScale.map((v) => [`.bg-glass-${v}`, makeBlur(v)])
-);
+const blurs = {
+  ...Object.fromEntries(blurScale.map((v) => [`.bg-glass-${v}`, makeBlur(v)])),
+  ".border-glass": { border: "1px solid rgba( 255, 255, 255, 0.18 )" },
+};
 
 module.exports = plugin(
   ({ addVariant, addComponents, addUtilities, config, theme, e }) => {
