@@ -2,21 +2,54 @@ const plugin = require("tailwindcss/plugin");
 const defaultTheme = require("tailwindcss/defaultTheme");
 const postcss = require("postcss");
 const selectorParser = require("postcss-selector-parser");
-
-const makeBlur = (v) => ({
-  backdropFilter: `blur(${defaultTheme.spacing[v]})`,
-  "-webkit-backdrop-filter": `blur(${defaultTheme.spacing[v]})`,
-});
-
-const blurScale = [...new Array(6)].map((_v, idx) => idx);
-
-const blurs = {
-  ...Object.fromEntries(blurScale.map((v) => [`.bg-glass-${v}`, makeBlur(v)])),
-  ".border-glass": { border: "1px solid rgba( 255, 255, 255, 0.18 )" },
-};
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+const { toRgba } = require("tailwindcss/lib/util/withAlphaVariable");
 
 module.exports = plugin(
   ({ addVariant, addComponents, addUtilities, config, theme, e }) => {
+    const makeBlur = (v) => ({
+      backdropFilter: `blur(${defaultTheme.spacing[v]})`,
+      "-webkit-backdrop-filter": `blur(${defaultTheme.spacing[v]})`,
+    });
+
+    const blurScale = [...new Array(6)].map((_v, idx) => idx);
+
+    const blurs = {
+      ...Object.fromEntries(
+        blurScale.map((v) => [`.bg-glass-${v}`, makeBlur(v)])
+      ),
+      ".border-glass": { border: "1px solid rgba( 255, 255, 255, 0.18 )" },
+    };
+
+    const stripes = {
+      ".bg-stripes": {
+        backgroundImage:
+          "linear-gradient(45deg, var(--stripes-color) 12.50%, transparent 12.50%, transparent 50%, var(--stripes-color) 50%, var(--stripes-color) 62.50%, transparent 62.50%, transparent 100%)",
+        backgroundSize: "5.66px 5.66px",
+      },
+    };
+
+    const addColor = (name, color) =>
+      (stripes[`.bg-stripes-${name}`] = { "--stripes-color": color });
+
+    const colors = flattenColorPalette(theme("backgroundColor"));
+    for (let name in colors) {
+      try {
+        const [r, g, b, a] = toRgba(colors[name]);
+        if (a !== undefined) {
+          addColor(name, colors[name]);
+        } else {
+          addColor(name, `rgba(${r}, ${g}, ${b}, 0.4)`);
+        }
+      } catch (_) {
+        addColor(name, colors[name]);
+      }
+    }
+
+    addUtilities(stripes, ["responsive"]);
+
     addUtilities(blurs, ["responsive"]);
 
     const fullBleed = {
