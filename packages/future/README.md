@@ -51,3 +51,7 @@ Adds scroll-snap utils.
 .scroll-snap-x
 .scroll-snap-y
 ```
+
+### Stripes
+
+This adds the nifty `bg-stripes` utils from Tailwind's documentation. Use `bg-stripes` to turn the utility on and then add a `bg-stripes-${color}` utility to actually set the stripe color.
