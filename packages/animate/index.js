@@ -42,19 +42,31 @@ const defaultSteps = [
 
 module.exports = plugin(
   ({ addUtilities, theme, e }) => {
-    const delays = Object.fromEntries(
-      Object.entries(theme("transitionDelay")).map(([k, v]) => [
-        `.animate-delay-${k}`,
-        { animationDelay: v },
-      ])
-    );
+    const delays = {
+      ...Object.fromEntries(
+        Object.entries(theme("transitionDelay")).map(([k, v]) => [
+          `.animate-delay-${k}`,
+          { animationDelay: v },
+        ])
+      ),
+      ".animate-delay-2000": { animationDelay: "2000" },
+      ".animate-delay-3000": { animationDelay: "3000" },
+      ".animate-delay-4000": { animationDelay: "4000" },
+      ".animate-delay-5000": { animationDelay: "5000" },
+    };
 
-    const durations = Object.fromEntries(
-      Object.entries(theme("transitionDelay")).map(([k, v]) => [
-        `.animate-duration-${k}`,
-        { animationDuration: v },
-      ])
-    );
+    const durations = {
+      ...Object.fromEntries(
+        Object.entries(theme("transitionDelay")).map(([k, v]) => [
+          `.animate-duration-${k}`,
+          { animationDuration: v },
+        ])
+      ),
+      ".animate-duration-2000": { animationDuration: "2000" },
+      ".animate-duration-3000": { animationDuration: "3000" },
+      ".animate-duration-4000": { animationDuration: "4000" },
+      ".animate-duration-5000": { animationDuration: "5000" },
+    };
 
     const names = Object.fromEntries(
       Object.keys(theme("keyframes")).map((key) => [
