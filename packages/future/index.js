@@ -9,6 +9,27 @@ const { toRgba } = require("tailwindcss/lib/util/withAlphaVariable");
 
 module.exports = plugin(
   ({ addVariant, addComponents, addUtilities, config, theme, e }) => {
+    // const transforms = {
+    //   ".transform-gpu": {
+    //     transform:
+    //       "translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
+    //     "--tw-rotate-x": "0.5turn",
+    //     "--tw-translate-x": "0",
+    //     "--tw-translate-y": "0",
+    //     "--tw-rotate-x": "0",
+    //     "--tw-rotate-y": "0",
+    //     "--tw-rotate": "0",
+    //     "--tw-skew-x": "0",
+    //     "--tw-skew-y": "0",
+    //     "--tw-scale-x": "1",
+    //     "--tw-scale-y": "1",
+    //   },
+    //   ".flip-x": { "--tw-rotate-x": "180deg" },
+    //   ".flip-y": { "--tw-rotate-y": "180deg" },
+    // };
+
+    // addUtilities(transforms, ["responsive"]);
+
     const makeBlur = (v) => ({
       backdropFilter: `blur(${defaultTheme.spacing[v]})`,
       "-webkit-backdrop-filter": `blur(${defaultTheme.spacing[v]})`,
