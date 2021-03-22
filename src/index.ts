@@ -7,7 +7,7 @@ import animate from './animate';
 
 const plugins = [content, future, scrollbars, decoration, animate];
 
-export default plugin(
+module.exports = plugin(
   helpers => {
     plugins.forEach(plugin => plugin.handler(helpers));
   },
@@ -39,5 +39,3 @@ export default plugin(
     },
   }
 );
-
-export { future, content, decoration, scrollbars, animate };
