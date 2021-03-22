@@ -1,18 +1,7 @@
 # tailwindcss-plugin-fancy
 
 This plugin merely wraps up a collection of other plugins I've written for
-Tailwind that makes my life/job easier. Plugins include:
-
-- [tailwindcss-plugin-animate](https://github.com/brandonpittman/tailwindcss-plugin-fancy/tree/master/packages/animate)
-- [tailwindcss-plugin-content](https://github.com/brandonpittman/tailwindcss-plugin-fancy/tree/master/packages/content)
-- [tailwindcss-plugin-decoration](https://github.com/brandonpittman/tailwindcss-plugin-fancy/tree/master/packages/decoration)
-- [tailwindcss-plugin-scrollbars](https://github.com/brandonpittman/tailwindcss-plugin-fancy/tree/master/packages/scrollbars)
-- [tailwindcss-plugin-future](https://github.com/brandonpittman/tailwindcss-plugin-fancy/tree/master/packages/future)
-
-## Extensions
-
-`min-h`, `max-h`, `min-w`, and `max-w` all get extended to the full `width` list of your
-`theme`.
+Tailwind that makes my life/job easier.
 
 ## Usage
 
@@ -27,8 +16,6 @@ module.export = {
 ```
 
 ## Animation
-
-### Motivation
 
 The Tailwind animation utility is nice, but it lacks the flexibility of the
 transition utilities. This plugin adds support for the following:
