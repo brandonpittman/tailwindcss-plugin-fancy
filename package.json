@@ -1,34 +1,59 @@
 {
-  "name": "tailwindcss-plugin-fancy",
-  "version": "2.11.4",
-  "description": "A collection of other Tailwind CSS plugins all rolled up for your convenience.",
-  "main": "./index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brandonpittman/tailwindcss-plugin-fancy.git"
-  },
-  "files": [
-    "index.js",
-    "packages"
-  ],
-  "scripts": {},
-  "peerDependencies": {
-    "tailwindcss": ">=2.0.2"
-  },
-  "keywords": [
-    "tailwindcss"
-  ],
-  "author": "Brandon Pittman",
+  "version": "0.1.0",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/brandonpittman/tailwindcss-plugin-fancy/issues"
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
   },
-  "homepage": "https://github.com/brandonpittman/tailwindcss-plugin-fancy#readme",
+  "scripts": {
+    "start": "tsdx watch --target node",
+    "build": "tsdx build --target node",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build --target node",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "tailwindcss-plugin-fancy",
+  "author": "Brandon Pittman",
+  "module": "dist/twfancy.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/twfancy.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/twfancy.esm.js",
+      "limit": "10 KB"
+    }
+  ],
   "devDependencies": {
-    "prettier": "^2.2.1"
-  },
-  "dependencies": {
-    "postcss": ">=8",
-    "postcss-selector-parser": "^6.0.4"
+    "@size-limit/preset-small-lib": "^4.10.1",
+    "autoprefixer": "^10.2.5",
+    "husky": "^5.2.0",
+    "postcss": "^8.2.8",
+    "postcss-selector-parser": "^6.0.4",
+    "size-limit": "^4.10.1",
+    "tailwindcss": "^2.0.4",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.2.3"
   }
 }
