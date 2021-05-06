@@ -6,12 +6,12 @@ Tailwind that makes my life/job easier.
 ## Usage
 
 ```javascript
-const fancy = require('tailwindcss-plugin-fancy');
+const fancy = require("tailwindcss-plugin-fancy");
 
 // tailwind.config.js
 module.export = {
   // ...
-  plugins: [fancy],
+  plugins: [fancy]
 };
 ```
 
@@ -113,7 +113,7 @@ like the following in `tailwind.config.js`.
 ```javascript
 theme: {
   animate: {
-    iterate: ['1.5', '2.5'];
+    iterate: ["1.5", "2.5"];
   }
 }
 ```
@@ -199,41 +199,41 @@ that have popped up lately. These include:
 
 ```javascript
 const decorationStyles = {
-  '.overline': {
-    textDecorationLine: 'overline',
+  ".overline": {
+    textDecorationLine: "overline"
   },
-  '.decoration-skip-none': {
-    textDecorationSkip: 'none',
+  ".decoration-skip-none": {
+    textDecorationSkip: "none"
   },
-  '.decoration-skip-objects': {
-    textDecorationSkip: 'objects',
+  ".decoration-skip-objects": {
+    textDecorationSkip: "objects"
   },
-  '.decoration-skip-spaces': {
-    textDecorationSkip: 'spaces',
+  ".decoration-skip-spaces": {
+    textDecorationSkip: "spaces"
   },
-  '.decoration-skip-edges': {
-    textDecorationSkip: 'edges',
-  },
-
-  '.decoration-skip-ink': {
-    textDecorationSkipInk: 'auto',
-  },
-  '.decoration-skip-ink-none': {
-    textDecorationSkipInk: 'none',
+  ".decoration-skip-edges": {
+    textDecorationSkip: "edges"
   },
 
-  '.underline-double': {
-    textDecorationStyle: 'double',
+  ".decoration-skip-ink": {
+    textDecorationSkipInk: "auto"
   },
-  '.underline-dotted': {
-    textDecorationStyle: 'dotted',
+  ".decoration-skip-ink-none": {
+    textDecorationSkipInk: "none"
   },
-  '.underline-dashed': {
-    textDecorationStyle: 'dashed',
+
+  ".underline-double": {
+    textDecorationStyle: "double"
   },
-  '.underline-wavy': {
-    textDecorationStyle: 'wavy',
+  ".underline-dotted": {
+    textDecorationStyle: "dotted"
   },
+  ".underline-dashed": {
+    textDecorationStyle: "dashed"
+  },
+  ".underline-wavy": {
+    textDecorationStyle: "wavy"
+  }
 };
 ```
 
@@ -311,10 +311,6 @@ These utilities add `.basis-${width}` matching everything in your `width` theme 
 
 These utilities add `.animate-delay-${delay}` matching everything in your
 `transtransitionDelay` theme key.
-
-### Glassmorphism
-
-Adds `bg-glass-{0,1,2,3,4,5}` utils that, when combined with existing Tailwind utils, allows you to achieve a _glassmorphic_ style.
 
 ### Debug
 
