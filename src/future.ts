@@ -141,6 +141,7 @@ export default plugin(
         return attr + ", " + pseudo;
       });
     });
+
     addVariant("invalid", ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
         return `.${e(`invalid${separator}${className}`)}:invalid`;
@@ -150,6 +151,28 @@ export default plugin(
     addVariant("invalid-focus", ({ modifySelectors, separator }) => {
       modifySelectors(({ className }) => {
         return `.${e(`invalid-focus${separator}${className}`)}:invalid:focus`;
+      });
+    });
+
+    addVariant("focused-sibling", ({ container }) => {
+      container.walkRules(rule => {
+        rule.selector = `:focus + .focused-sibling\\:${rule.selector.slice(1)}`;
+      });
+    });
+
+    addVariant("disabled-sibling", ({ container }) => {
+      container.walkRules(rule => {
+        rule.selector = `:disabled + .disabled-sibling\\:${rule.selector.slice(
+          1
+        )}`;
+      });
+    });
+
+    addVariant("checked-sibling", ({ container }) => {
+      container.walkRules(rule => {
+        rule.selector = `:checked + .checked-sibling\\:${rule.selector.slice(
+          1
+        )}`;
       });
     });
 

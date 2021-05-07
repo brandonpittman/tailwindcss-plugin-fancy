@@ -299,6 +299,23 @@ Added a `group-disabled` variant similar to `group-hover`. Works with
 `element[disabled]` and `element:disabled`. Will replace in the future with an
 `is:([disabled], :disabled)` implementation.
 
+### Sibling Selectors
+
+Added the following sibling-based selectors:
+
+- `checked-sibling`
+- `focused-sibling`
+- `disabled-sibling`
+
+Add them to your config as variant extends and use them like this:
+
+```html
+<label>
+  <input type="radio" class="sr-only" />
+  <div class="border checked-sibling:border-blue-600"></div>
+</label>
+```
+
 ### Touch
 
 There's a `touch` variant that targets `@media(hover: none)`.
