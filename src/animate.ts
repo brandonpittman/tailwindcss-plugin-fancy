@@ -42,60 +42,60 @@ const defaultSteps = [
 ];
 
 export default plugin(
-  ({ addUtilities, theme, e }) => {
+  ({addUtilities, theme, e}) => {
     const delays = {
       ...Object.fromEntries(
         Object.entries(theme('transitionDelay')).map(([k, v]) => [
           `.animate-delay-${k}`,
-          { animationDelay: v },
+          {animationDelay: v},
         ])
       ),
-      '.animate-delay-2000': { animationDelay: '2000' },
-      '.animate-delay-3000': { animationDelay: '3000' },
-      '.animate-delay-4000': { animationDelay: '4000' },
-      '.animate-delay-5000': { animationDelay: '5000' },
+      '.animate-delay-2000': {animationDelay: '2000'},
+      '.animate-delay-3000': {animationDelay: '3000'},
+      '.animate-delay-4000': {animationDelay: '4000'},
+      '.animate-delay-5000': {animationDelay: '5000'},
     };
 
     const durations = {
       ...Object.fromEntries(
         Object.entries(theme('transitionDelay')).map(([k, v]) => [
           `.animate-duration-${k}`,
-          { animationDuration: v },
+          {animationDuration: v},
         ])
       ),
-      '.animate-duration-2000': { animationDuration: '2000' },
-      '.animate-duration-3000': { animationDuration: '3000' },
-      '.animate-duration-4000': { animationDuration: '4000' },
-      '.animate-duration-5000': { animationDuration: '5000' },
+      '.animate-duration-2000': {animationDuration: '2000'},
+      '.animate-duration-3000': {animationDuration: '3000'},
+      '.animate-duration-4000': {animationDuration: '4000'},
+      '.animate-duration-5000': {animationDuration: '5000'},
     };
 
     const names = Object.fromEntries(
       Object.keys(theme('keyframes')).map(key => [
         `.animate-${key}`,
-        { animationName: key },
+        {animationName: key},
       ])
     );
 
     const timingFuctions = {
-      '.animate-step-start': { animationTimingFunction: 'jump-start' },
-      '.animate-step-end': { animationTimingFunction: 'jump-end' },
+      '.animate-step-start': {animationTimingFunction: 'jump-start'},
+      '.animate-step-end': {animationTimingFunction: 'jump-end'},
       ...Object.fromEntries(
         Object.entries(theme('transitionTimingFunction')).map(([k, v]) => [
           k === 'DEFAULT' ? '.animate-ease' : `.animate-ease-${k}`,
-          { animationTimingFunction: v },
+          {animationTimingFunction: v},
         ])
       ),
       ...Object.fromEntries(
         [...defaultSteps, ...theme('animate').steps].map(step =>
           Array.isArray(step)
             ? [
-                `.animate-step-${step[0]}-${step[1]}`,
-                { animationTimingFunction: `steps(${step[0]}, ${step[1]})` },
-              ]
+              `.animate-step-${step[0]}-${step[1]}`,
+              {animationTimingFunction: `steps(${step[0]}, ${step[1]})`},
+            ]
             : [
-                `.animate-step-${step}`,
-                { animationTimingFunction: `steps(${step})` },
-              ]
+              `.animate-step-${step}`,
+              {animationTimingFunction: `steps(${step})`},
+            ]
         )
       ),
     };
@@ -112,21 +112,21 @@ export default plugin(
     const modes = Object.fromEntries(
       ['none', 'forwards', 'backwards', 'both'].map(mode => [
         `.fill-${mode}`,
-        { animationFillMode: mode },
+        {animationFillMode: mode},
       ])
     );
 
     const directions = Object.fromEntries(
       ['normal', 'reverse', 'alternate', 'alternate-reverse'].map(direction => [
         `.direction-${direction}`,
-        { animationDirection: direction },
+        {animationDirection: direction},
       ])
     );
 
     const iterations = Object.fromEntries(
       [...defaultIterate, ...theme('animate').iterate].map(count => [
         `.${e(`iterate-${count}`)}`,
-        { animationIterationCount: count },
+        {animationIterationCount: count},
       ])
     );
 
@@ -155,6 +155,9 @@ export default plugin(
         '.animate-bounce': {
           animationName: 'bounce',
         },
+        '.animate-warp': {
+          animationName: 'bg-warp',
+        }
       },
       ['responsive', 'hover', 'focus', 'group-hover', 'group-focus']
     );
