@@ -63,10 +63,10 @@ export default plugin(
           {animationDuration: v},
         ])
       ),
-      '.animate-duration-2000': {animationDuration: '2000'},
-      '.animate-duration-3000': {animationDuration: '3000'},
-      '.animate-duration-4000': {animationDuration: '4000'},
-      '.animate-duration-5000': {animationDuration: '5000'},
+      '.animate-duration-2000': {animationDuration: '2000ms'},
+      '.animate-duration-3000': {animationDuration: '3000ms'},
+      '.animate-duration-4000': {animationDuration: '4000ms'},
+      '.animate-duration-5000': {animationDuration: '5000ms'},
     };
 
     const names = Object.fromEntries(
