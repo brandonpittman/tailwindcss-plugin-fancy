@@ -50,10 +50,10 @@ export default plugin(
           {animationDelay: v},
         ])
       ),
-      '.animate-delay-2000': {animationDelay: '2000'},
-      '.animate-delay-3000': {animationDelay: '3000'},
-      '.animate-delay-4000': {animationDelay: '4000'},
-      '.animate-delay-5000': {animationDelay: '5000'},
+      '.animate-delay-2000': {animationDelay: '2000ms'},
+      '.animate-delay-3000': {animationDelay: '3000ms'},
+      '.animate-delay-4000': {animationDelay: '4000ms'},
+      '.animate-delay-5000': {animationDelay: '5000ms'},
     };
 
     const durations = {
