@@ -1,11 +1,10 @@
 import plugin from 'tailwindcss/plugin';
-import content from './content';
 import decoration from './decoration';
 import future from './future';
 import scrollbars from './scrollbars';
 import animate from './animate';
 
-const plugins = [content, future, scrollbars, decoration, animate];
+const plugins = [future, scrollbars, decoration, animate];
 
 module.exports = plugin(
   helpers => {
@@ -13,7 +12,6 @@ module.exports = plugin(
   },
   {
     variants: {
-      ...content.config.variants,
       ...animate.config.variants,
     },
     theme: {
