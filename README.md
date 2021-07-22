@@ -69,9 +69,6 @@ transition utilities. This plugin adds support for the following:
 }
 ```
 
-The iteration values must be strings. Pure numbers will be rendered as `px` by
-Tailwind otherwise.
-
 `animation-timing-function` gets support for steps!
 
 ```css
@@ -117,80 +114,6 @@ theme: {
   }
 }
 ```
-
-## Pseudo Elements
-
-### Utilities
-
-This plugin adds a bunch of `:after` and `:before`-specific utilities to
-Tailwind. Essentially, you can start styling pseudo elements by appending
-classes to the regular elements they belong to.
-
-```javascript
-'.content-none': {
-  content: '\'\''
-},
-'.content-data-src': {
-  content: 'attr(src)'
-},
-'.content-data-href': {
-  content: 'attr(href)'
-},
-'.content-data-title': {
-  content: 'attr(title)'
-},
-'.content-data-lang': {
-  content: 'attr(lang)'
-},
-'.content-data-before': {
-  content: 'attr(data-before)'
-},
-'.content-data-after': {
-  content: 'attr(data-after)'
-},
-'.content-var-before': {
-  content: 'var(--before)'
-},
-'.content-var-after': {
-  content: 'var(--after)'
-},
-'.content-open-quote': {
-  content: 'open-quote'
-},
-'.content-close-quote': {
-  content: 'close-quote'
-},
-'.-z-10': {
-  zIndex: '-10'
-},
-'.-z-20': {
-  zIndex: '-20'
-},
-'.-z-30': {
-  zIndex: '-30'
-},
-'.-z-40': {
-  zIndex: '-40'
-},
-'.-z-50': {
-  zIndex: '-50'
-},
-```
-
-### Variants
-
-This plugin also adds `after:` and `before:` variants to all the utilities you
-might want to use to style pseudo elements. That means if you wanted to add a
-little blue circle that takes up the whole element, you could do so by writing
-this:
-
-```html
-<div
-  class="relative h-64 w-64 after:content-none after:absolute after:bg-blue-500 after:inset-0 after:rounded-full"
-></div>
-```
-
-Essentially, it's one less thing to have to create an actual CSS file for.
 
 ## Text Decoration
 
@@ -289,33 +212,6 @@ The `$color` bit can be any color in your theme. For best results, apply the uti
 These are settings that I could see being added to the Tailwind standard config
 in the future.
 
-### Invalid & Invalid Focus Variants
-
-Can use `invalid` and `invalid-focus` variants.
-
-### Group Disabled
-
-Added a `group-disabled` variant similar to `group-hover`. Works with
-`element[disabled]` and `element:disabled`. Will replace in the future with an
-`is:([disabled], :disabled)` implementation.
-
-### Sibling Selectors
-
-Added the following sibling-based selectors:
-
-- `checked-sibling`
-- `focused-sibling`
-- `disabled-sibling`
-
-Add them to your config as variant extends and use them like this:
-
-```html
-<label>
-  <input type="radio" class="sr-only" />
-  <div class="border checked-sibling:border-blue-600"></div>
-</label>
-```
-
 ### Touch
 
 There's a `touch` variant that targets `@media(hover: none)`.
@@ -323,15 +219,6 @@ There's a `touch` variant that targets `@media(hover: none)`.
 ## Flex-basis
 
 These utilities add `.basis-${width}` matching everything in your `width` theme key.
-
-## Animation Delay
-
-These utilities add `.animate-delay-${delay}` matching everything in your
-`transtransitionDelay` theme key.
-
-### Debug
-
-Adds a `.debug` utility that puts a red box around an element (for debugging).
 
 ### Bleed
 
