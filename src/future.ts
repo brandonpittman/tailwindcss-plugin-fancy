@@ -12,7 +12,6 @@ export default plugin(
       "date",
       "time",
       "true",
-      "false",
     ];
 
     addVariant("current", ({ modifySelectors, separator }) => {

@@ -1,5 +1,6 @@
 node_modules
 dist
+*.html
 *.css
 tags
 yarn.lock
