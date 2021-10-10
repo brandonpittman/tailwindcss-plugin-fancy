@@ -91,13 +91,6 @@ export default plugin(
     };
 
     addComponents(fullBleed, ["responsive"]);
-    const scrollSnap = {
-      ".scroll-snap-none": { scrollSnapType: "none" },
-      ".scroll-snap-x": { scrollSnapType: "x" },
-      ".scroll-snap-y": { scrollSnapType: "y" },
-    };
-
-    addUtilities(scrollSnap, ["responsive"]);
 
     const basises = Object.fromEntries(
       Object.entries(theme("width")).map(([k, v]) => [
