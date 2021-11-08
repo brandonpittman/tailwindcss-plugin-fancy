@@ -1,54 +1,54 @@
-import plugin from 'tailwindcss/plugin';
+import plugin from "tailwindcss/plugin";
 
 export default plugin(({ addUtilities, variants, theme }) => {
-  let { colors, spacing } = require('tailwindcss/defaultTheme');
+  let { colors, spacing } = require("tailwindcss/defaultTheme");
 
   colors = {
     ...colors,
-    ...theme('colors'),
+    ...theme("colors"),
   };
 
   const decorationStyles = {
-    '.overline': {
-      textDecorationLine: 'overline',
+    ".overline": {
+      textDecorationLine: "overline",
     },
-    '.decoration-skip-none': {
-      textDecorationSkip: 'none',
+    ".decoration-skip-none": {
+      textDecorationSkip: "none",
     },
-    '.decoration-skip-objects': {
-      textDecorationSkip: 'objects',
+    ".decoration-skip-objects": {
+      textDecorationSkip: "objects",
     },
-    '.decoration-skip-spaces': {
-      textDecorationSkip: 'spaces',
+    ".decoration-skip-spaces": {
+      textDecorationSkip: "spaces",
     },
-    '.decoration-skip-edges': {
-      textDecorationSkip: 'edges',
-    },
-
-    '.decoration-skip-ink': {
-      textDecorationSkipInk: 'auto',
-    },
-    '.decoration-skip-ink-none': {
-      textDecorationSkipInk: 'none',
+    ".decoration-skip-edges": {
+      textDecorationSkip: "edges",
     },
 
-    '.underline-double': {
-      textDecorationStyle: 'double',
+    ".decoration-skip-ink": {
+      textDecorationSkipInk: "auto",
     },
-    '.underline-dotted': {
-      textDecorationStyle: 'dotted',
+    ".decoration-skip-ink-none": {
+      textDecorationSkipInk: "none",
     },
-    '.underline-dashed': {
-      textDecorationStyle: 'dashed',
+
+    ".underline-double": {
+      textDecorationStyle: "double",
     },
-    '.underline-wavy': {
-      textDecorationStyle: 'wavy',
+    ".underline-dotted": {
+      textDecorationStyle: "dotted",
+    },
+    ".underline-dashed": {
+      textDecorationStyle: "dashed",
+    },
+    ".underline-wavy": {
+      textDecorationStyle: "wavy",
     },
   };
 
   const decorationColors = {
-    '.decoration-current': {
-      textDecorationColor: 'currentColor',
+    ".decoration-current": {
+      textDecorationColor: "currentColor",
     },
   };
 
@@ -65,7 +65,7 @@ export default plugin(({ addUtilities, variants, theme }) => {
   }
 
   for (const [key, value] of Object.entries(colors)) {
-    if (typeof value === 'string') {
+    if (typeof value === "string") {
       decorationColors[`.decoration-${key}`] = {
         textDecorationColor: value,
       };
@@ -84,5 +84,5 @@ export default plugin(({ addUtilities, variants, theme }) => {
     ...decorationStyles,
   };
 
-  addUtilities(decorations, variants('decoration', ['responsive', 'hover']));
+  addUtilities(decorations, variants("decoration", ["responsive", "hover"]));
 });
