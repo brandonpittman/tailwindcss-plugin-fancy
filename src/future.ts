@@ -92,12 +92,6 @@ export default plugin(
 
     addComponents(fullBleed, ["responsive"]);
 
-    const basises = Object.fromEntries(
-      Object.entries(theme("width")).map(([k, v]) => [
-        `.${e(`basis-${k}`)}`,
-        { flexBasis: v },
-      ])
-    );
     addUtilities({
       "@keyframes bg-warp": {
         from: { "background-position": "right" },
@@ -121,7 +115,6 @@ export default plugin(
         ".bg-jumbo": {
           backgroundSize: "400% 400%",
         },
-        ...basises,
       },
       ["responsive"]
     );
