@@ -11,7 +11,7 @@ const fancy = require("tailwindcss-plugin-fancy");
 // tailwind.config.js
 module.export = {
   // ...
-  plugins: [fancy]
+  plugins: [fancy],
 };
 ```
 
