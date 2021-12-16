@@ -23,12 +23,14 @@
     "postcss": "^8.2.8",
     "tailwindcss": "^3.0.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
+  "nano-staged": {
+    "*.{ts,tsx}": [
+      "tsdx lint"
+    ]
   },
-  "prettier": {},
+  "simple-git-hooks": {
+    "pre-commit": "./node_modules/.bin/nano-staged"
+  },
   "name": "tailwindcss-plugin-fancy",
   "author": "Brandon Pittman",
   "module": "dist/tailwindcss-plugin-fancy.esm.js",
@@ -45,8 +47,9 @@
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.12.0",
     "autoprefixer": "^10.3.1",
-    "husky": "^5.2.0",
+    "nano-staged": "^0.5.0",
     "postcss": "^8.3.6",
+    "simple-git-hooks": "^2.7.0",
     "size-limit": "^4.12.0",
     "tailwindcss": "^3.0.0",
     "tsdx": "^0.14.1",

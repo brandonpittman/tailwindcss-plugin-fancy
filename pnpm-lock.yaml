@@ -3,8 +3,9 @@ lockfileVersion: 5.3
 specifiers:
   '@size-limit/preset-small-lib': ^4.12.0
   autoprefixer: ^10.3.1
-  husky: ^5.2.0
+  nano-staged: ^0.5.0
   postcss: ^8.3.6
+  simple-git-hooks: ^2.7.0
   size-limit: ^4.12.0
   tailwindcss: ^3.0.0
   tsdx: ^0.14.1
@@ -14,8 +15,9 @@ specifiers:
 devDependencies:
   '@size-limit/preset-small-lib': 4.12.0_411c0763187eed48e1fcf4f7ed7465a1
   autoprefixer: 10.3.1_postcss@8.3.6
-  husky: 5.2.0
+  nano-staged: 0.5.0
   postcss: 8.3.6
+  simple-git-hooks: 2.7.0
   size-limit: 4.12.0
   tailwindcss: 3.0.0_7b69a43ec4689fa7484dee35f79a7806
   tsdx: 0.14.1
@@ -4525,12 +4527,6 @@ packages:
     resolution: {integrity: sha512-qLo/08cNc3Tb0uD7jK0jAcU5cnqCM0n568918E7R2XhMr/+7F37p4EY062W/stg7tmzvknNn9b/1+UhVRzsYrQ==}
     dev: true
 
-  /husky/5.2.0:
-    resolution: {integrity: sha512-AM8T/auHXRBxlrfPVLKP6jt49GCM2Zz47m8G3FOMsLmTv8Dj/fKVWE0Rh2d4Qrvmy131xEsdQnb3OXRib67PGg==}
-    engines: {node: '>= 10'}
-    hasBin: true
-    dev: true
-
   /iconv-lite/0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
     engines: {node: '>=0.10.0'}
@@ -6017,6 +6013,14 @@ packages:
     dev: true
     optional: true
 
+  /nano-staged/0.5.0:
+    resolution: {integrity: sha512-5jkhLvyZM974RmCyI8vt7zo0QK6GIAOCBe6e7L36awXIlG+40/5zJiDvESFrFmO4PhBCRm9lUlnH0SsWAFLDLg==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    hasBin: true
+    dependencies:
+      picocolors: 1.0.0
+    dev: true
+
   /nanoid/3.1.23:
     resolution: {integrity: sha512-FiB0kzdP0FFVGDKlRLEQ1BgDzU87dy5NnzjeW9YZNt+/c3+q82EQDUwniSAUxp/F0gFNI1ZhKU1FqYsMuqZVnw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -6523,6 +6527,10 @@ packages:
 
   /performance-now/2.1.0:
     resolution: {integrity: sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=}
+    dev: true
+
+  /picocolors/1.0.0:
+    resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
     dev: true
 
   /picomatch/2.3.0:
@@ -7746,6 +7754,12 @@ packages:
 
   /signal-exit/3.0.3:
     resolution: {integrity: sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==}
+    dev: true
+
+  /simple-git-hooks/2.7.0:
+    resolution: {integrity: sha512-nQe6ASMO9zn5/htIrU37xEIHGr9E6wikXelLbOeTcfsX2O++DHaVug7RSQoq+kO7DvZTH37WA5gW49hN9HTDmQ==}
+    hasBin: true
+    requiresBuild: true
     dev: true
 
   /sirv/1.0.12:
