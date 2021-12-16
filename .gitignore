@@ -3,5 +3,3 @@ dist
 *.html
 *.css
 tags
-yarn.lock
-package-lock.json
