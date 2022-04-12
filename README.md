@@ -166,6 +166,10 @@ in the future.
 
 There's a `touch` variant that targets `@media(hover: none)`.
 
+### Not Touch
+
+There's a `not-touch` variant that targets `@media(hover: hover)`.
+
 ### Bleed
 
 Adds `.bleed` and `.bleed-grid` components to to make blog-style full bleed images easier to handle.

@@ -130,5 +130,18 @@ export default plugin(
         rule.selector = `.${e(`touch${separator}${rule.selector.slice(1)}`)}`;
       });
     });
+    addVariant("not-touch", ({ container, separator }) => {
+      const supportsRule = postcss.atRule({
+        name: "media",
+        params: "(hover: hover)",
+      });
+      supportsRule.append(container.nodes);
+      container.append(supportsRule);
+      supportsRule.walkRules((rule) => {
+        rule.selector = `.${e(
+          `not-touch${separator}${rule.selector.slice(1)}`
+        )}`;
+      });
+    });
   }
 );
