@@ -155,7 +155,10 @@ body::-webkit-scrollbar-thumb {
   .scrollbar-x-none .scrollbar-y-none;
 ```
 
-The `$color` bit can be any color in your theme. For best results, apply the utilities to the `html` tag in your templates. Since they're just utilities, you can apply different ones to scrollable elements within your site to have multiple styles.
+The `$color` bit can be any color in your theme. For best results, apply the
+utilities to the `html` tag in your templates. Since they're just utilities,
+you can apply different ones to scrollable elements within your site to have
+multiple styles.
 
 ## Tailwind 2077
 
@@ -172,10 +175,19 @@ There's a `not-touch` variant that targets `@media(hover: hover)`.
 
 ### Bleed
 
-Adds `.bleed` and `.bleed-grid` components to to make blog-style full bleed images easier to handle.
+Adds `.bleed` and `.bleed-grid` components to to make blog-style full bleed
+images easier to handle.
 
 ### Stripes
 
-This adds the nifty `bg-stripes` utils from Tailwind's documentation. Use `bg-stripes` to turn the utility on and then add a `bg-stripes-${color}` utility to actually set the stripe color.
+This adds the nifty `bg-stripes` utils from Tailwind's documentation. Use
+`bg-stripes` to turn the utility on and then add a `bg-stripes-${color}`
+utility to actually set the stripe color.
 
 You can also use `bg-stripes-{0, 45, 90, 135}` to control the angle.
+
+### `word-break: keep-all`
+
+CJK has serious issues with linebreaks. Use the `.break-keep-all` util and
+place `<wbr/>` elements wherever a line _could_ break and see some nice
+results!
