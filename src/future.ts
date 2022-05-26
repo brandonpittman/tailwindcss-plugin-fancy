@@ -119,6 +119,12 @@ export default plugin(
       ["responsive"]
     );
 
+    addUtilities({
+      ".break-keep-all": {
+        "word-break": "keep-all",
+      },
+    });
+
     addVariant("touch", ({ container, separator }) => {
       const supportsRule = postcss.atRule({
         name: "media",
