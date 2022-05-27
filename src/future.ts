@@ -121,6 +121,7 @@ export default plugin(
 
     addUtilities({
       ".w-128": { width: "32rem" },
+      ".h-128": { height: "32rem" },
       ".break-keep-all": {
         "word-break": "keep-all",
       },
