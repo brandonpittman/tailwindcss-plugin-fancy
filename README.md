@@ -191,3 +191,11 @@ You can also use `bg-stripes-{0, 45, 90, 135}` to control the angle.
 CJK has serious issues with linebreaks. Use the `.break-keep-all` util and
 place `<wbr/>` elements wherever a line _could_ break and see some nice
 results!
+
+```html
+<p class="break-keep-all">
+  この文書がちょっと
+  <wbr/>
+  長いかもしれません。
+</p>
+```
